@@ -59,3 +59,9 @@ Notes : the namespace 'airflow' you can change based on your own will
 4. Wait until installation is finished, then open Lens. 
 Expand `docker-desktop -> Workloads` and click overview
 Don't forget to choose `namespace`
+
+![alt text](https://github.com/AnomP29/local-airflow/blob/main/pic/Screenshot%202025-02-08%20191113.png)
+
+All Pods should Running, mark with green 
+
+**NOW YOUR AIRFLOW READY TO USE**
