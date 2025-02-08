@@ -64,4 +64,4 @@ Don't forget to choose `namespace`
 
 All Pods should Running, mark with green 
 
-**NOW YOUR AIRFLOW READY TO USE**
+**NOW YOUR AIRFLOW READY IS TO USE**
