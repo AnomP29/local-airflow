@@ -40,3 +40,4 @@ You can install from the link above.
 #### How to use Lens
 1. Open Lens
 2. Add KubeConfigs
+3. Choose `config` File in `C:\Users\{your_user_name}\.kube`
