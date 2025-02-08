@@ -35,3 +35,8 @@ sudo apt-get install helm
 ```
 1. Check if helm already installed : `helm version`
 It will show you `version.BuildInfo{Version:"v3.17.0", GitCommit:"301108edc7ac2a8ba79e4ebf5701b0b6ce6a31e4", GitTreeState:"clean", GoVersion:"go1.23.4"}`
+### c. Installing Lens :
+You can install from the link above.
+#### How to use Lens
+1. Open Lens
+2. Add KubeConfigs
