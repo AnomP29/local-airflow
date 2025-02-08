@@ -14,5 +14,11 @@ Deploying Apache Airflow using docker and kubernetes locally using **Docker-Desk
 3. Enable Kubernetes and wait until finish
 
 ### b. Check if Kubernetes installed properly :
-1. kubectl version
+1. Type ```kubectl version```
+2. It will show
+   ```
+   Client Version: v1.31.4
+   Kustomize Version: v5.4.2
+   Server Version: v1.31.4
+   ```
     
