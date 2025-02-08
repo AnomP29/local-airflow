@@ -47,3 +47,15 @@ You can install from the link above.
 4. Your lens SideBar will show new option
 
 ![alt text](https://github.com/AnomP29/local-airflow/blob/main/pic/Screenshot%202025-02-08%20190001.png)
+
+### d. Installing/Deploying Airflow HelmCharts PODS:
+1. Add airflow to the local Helm repository
+`helm repo add apache-airflow https://airflow.apache.org`
+2. Update Helm repository to ensure it is up to date after adding airflow
+`helm repo update`
+3. Install the airflow into a Kubernetes pod
+`helm install airflow apache-airflow/airflow --namespace airflow --create-namespace --debug`
+Notes : the namespace 'airflow' you can change based on your own will
+4. Wait until installation is finished, then open Lens. 
+Expand `docker-desktop -> Workloads` and click overview
+Don't forget to choose `namespace`
