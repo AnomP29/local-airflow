@@ -44,3 +44,6 @@ You can install from the link above.
 ![alt text](https://github.com/AnomP29/local-airflow/blob/main/pic/Screenshot%202025-02-08%20185452.png)
 
 3. Choose `config` File in `C:\Users\{your_user_name}\.kube`
+4. Your lens SideBar will show new option
+
+![alt text](https://github.com/AnomP29/local-airflow/blob/main/pic/Screenshot%202025-02-08%20190001.png)
