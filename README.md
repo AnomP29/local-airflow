@@ -70,5 +70,6 @@ But Before you can open `Airflow Webserver` you need to forwarding Port. Here is
 `kubectlport-forward svc/airflow-webserver 8080:8080 --namespace local-airflow` \
 
 Open your Local browser and go to this address : \
-`http://localhost:8080/`
+`http://localhost:8080/` \
+![alt text](https://github.com/AnomP29/local-airflow/blob/main/pic/Screenshot%202025-02-08%20191853.png)
 
