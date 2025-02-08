@@ -12,3 +12,7 @@ Deploying Apache Airflow using docker and kubernetes locally using **Docker-Desk
 1. Open your Docker-Desktop
 2. Go to Setting(gear icon) and go to Kubernetes tab
 3. Enable Kubernetes and wait until finish
+
+### b. Check if Kubernetes installed properly :
+1. kubectl version
+    
