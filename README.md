@@ -40,4 +40,7 @@ You can install from the link above.
 #### How to use Lens
 1. Open Lens
 2. Add KubeConfigs
+
+![alt text](https://github.com/AnomP29/local-airflow/blob/main/pic/Screenshot%202025-02-08%20185452.png)
+
 3. Choose `config` File in `C:\Users\{your_user_name}\.kube`
