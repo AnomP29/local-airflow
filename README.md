@@ -3,8 +3,8 @@ Deploying Apache Airflow using docker and kubernetes locally using **Docker-Desk
 
 ## 1. Environment :
 - Windows 11
-- WSL2
-- Docker-Desktop
+- WSL2 (https://learn.microsoft.com/en-us/windows/wsl/install)
+- Docker-Desktop (https://www.docker.com/products/docker-desktop/)
 - Helm Charts
 
 ## 2. How To :
