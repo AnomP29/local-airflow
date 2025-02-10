@@ -10,7 +10,7 @@ default_args = {
 }
 
 dag = DAG(
-    'First_K8s',
+    'Testing_1st_DAGS',
     default_args = default_args,
     schedule = timedelta(days=1)
 )
