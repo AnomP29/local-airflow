@@ -12,7 +12,7 @@ default_args = {
 dag = DAG(
     'Testing_1st_DAGS',
     default_args = default_args,
-    schedule = timedelta(days=1)
+    schedule_interva=None
 )
 
 t1 = BashOperator(
