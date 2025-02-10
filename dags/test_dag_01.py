@@ -12,7 +12,7 @@ default_args = {
 dag = DAG(
     'Testing_1st_DAGS',
     default_args = default_args,
-    schedule_interva=None
+    schedule_interval=None
 )
 
 t1 = BashOperator(
