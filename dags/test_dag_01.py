@@ -3,10 +3,11 @@ from airflow.operators.bash import BashOperator
 from datetime import datetime, timedelta
 
 import pandas as pd
-import gspread
+# import gspread
 
 
 df = pd.DataFrame([[1, 2], [3, 4], [5, 6], [7, 8]], columns=["A", "B"])
+print(df)
 
 default_args = {
     'owner': 'rafaverama',
