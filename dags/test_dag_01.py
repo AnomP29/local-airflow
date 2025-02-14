@@ -7,7 +7,8 @@ import pandas as pd
 
 
 df = pd.DataFrame([[1, 2], [3, 4], [5, 6], [7, 8]], columns=["A", "B"])
-print(df)
+df = df.astype(str)
+# print(df)
 
 default_args = {
     'owner': 'anomp',
