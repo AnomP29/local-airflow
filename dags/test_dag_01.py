@@ -25,7 +25,7 @@ t1 = BashOperator(
     task_id = 'first_k8s',
     bash_command ='echo $var1_name && echo $var2_name',
     env={
-        "var1_name": df,
+        "var1_name": df.astype(str),
         "var2_name": "static value",
     },
     dag = dag
