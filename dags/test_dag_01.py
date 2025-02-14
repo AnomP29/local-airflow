@@ -2,6 +2,8 @@ from airflow import DAG
 from airflow.operators.bash import BashOperator
 from datetime import datetime, timedelta
 
+import pandas as pd
+
 
 default_args = {
     'owner': 'rafaverama',
