@@ -23,7 +23,11 @@ dag = DAG(
 
 t1 = BashOperator(
     task_id = 'first_k8s',
-    bash_command ='echo --df={df}'.format(df=df),
+    bash_command ='echo $var1_name && echo $var2_name',
+    env={
+        "var1_name": df,
+        "var2_name": "static value",
+    },
     dag = dag
 )
 
