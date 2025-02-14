@@ -10,7 +10,7 @@ df = pd.DataFrame([[1, 2], [3, 4], [5, 6], [7, 8]], columns=["A", "B"])
 print(df)
 
 default_args = {
-    'owner': 'rafaverama',
+    'owner': 'anomp',
     'start_date': datetime(2024, 0o3, 0o4),
     'catchup': False
 }
@@ -23,7 +23,7 @@ dag = DAG(
 
 t1 = BashOperator(
     task_id = 'first_k8s',
-    bash_command ='echo "first_k8s"',
+    bash_command ='echo --df={df}'.format(df=df),
     dag = dag
 )
 
