@@ -5,6 +5,8 @@ from datetime import datetime, timedelta
 import pandas as pd
 
 
+df = pd.DataFrame([[1, 2], [3, 4], [5, 6], [7, 8]], columns=["A", "B"])
+
 default_args = {
     'owner': 'rafaverama',
     'start_date': datetime(2024, 0o3, 0o4),
