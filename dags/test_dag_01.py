@@ -6,8 +6,8 @@ import pandas as pd
 # import gspread
 
 
-df = pd.DataFrame([[1, 2], [3, 4], [5, 6], [7, 8]], columns=["A", "B"])
-df = df.astype(str)
+# df = pd.DataFrame([[1, 2], [3, 4], [5, 6], [7, 8]], columns=["A", "B"])
+# df = df.astype(str)
 # print(df)
 
 default_args = {
@@ -26,7 +26,7 @@ t1 = BashOperator(
     task_id = 'first_k8s',
     bash_command ='echo $var1_name && echo $var2_name',
     env={
-        "var1_name": df,
+        "var1_name": 'stats',
         "var2_name": "static value",
     },
     dag = dag
