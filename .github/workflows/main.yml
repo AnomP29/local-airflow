@@ -31,7 +31,7 @@ jobs:
                 images: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}
                 tags: |
                     type=semver,pattern={{raw}}
-                    type=semver,pattern={{raw}}
+                    type=semver,pattern={{raw}},value=v1.0.0
 
             # - # create a build kit builder instance
             #   name: Set up Docker Buildx
