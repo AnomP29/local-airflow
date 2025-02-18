@@ -20,9 +20,6 @@ jobs:
               name: Checkout
               uses: actions/checkout@v3
 
-            - name: Build the Docker image
-              run: docker build . --file Dockerfile --tag ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:${{ steps.meta.outputs.tags }}
-            
             - # login to Docker Hub using the secrets provided
               name: Login to Docker Hub
               run: echo ${{ secrets.DOCKERHUB_TOKEN }} | docker login -u ${{ secrets.DOCKERHUB_USERNAME }} --password-stdin
@@ -34,6 +31,9 @@ jobs:
                 images: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}
                 tags: |
                   type=semver,pattern={{version}}
+
+            - name: Build the Docker image
+              run: docker build . --file Dockerfile --tag ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:${{ steps.meta.outputs.tags }}
 
             - # create a build kit builder instance
               name: Set up Docker Buildx
