@@ -15,6 +15,7 @@ env:
 
 run-name: running tests for buildimage
 jobs:
+    
     build:
         name: Build Docker-Image
         runs-on: ubuntu-latest
@@ -26,8 +27,9 @@ jobs:
             - 
               name: Check for changes
               id: check_changes
+              working-directory: ./app
               run: |
-                watched_files=(".. requirements.txt")
+                watched_files=("./requirements.txt")
                 
                 if [[ ${{ github.event_name }} == 'pull_request' ]]; then
                   changed_files=$(git diff --name-only -r HEAD^1 HEAD)
