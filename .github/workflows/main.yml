@@ -1,9 +1,15 @@
 name: local-airflow-actions
 
-on: # specify the build to trigger the automated ci/cd
-    push:
-        branches:
-            - "main"
+# on: # specify the build to trigger the automated ci/cd
+#     push:
+#         branches:
+#             - "main"
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+    
 env: 
   REGISTRY: docker.io
   IMAGE_NAME: anompu/airflow-293-hub
@@ -33,12 +39,12 @@ jobs:
             
             -
               name: Update Minor version
-              uses: AnomP29/actions-set-secret@v2.0.0
+              uses: hmanzur/actions-set-secret@v2.0.0
               with:
                 name: 'MINOR'
                 value: $((${{ secrets.MINOR }}+1))
-                repository: anompu/airflow-293-hub
-                token: ${{ secrets.DOCKERHUB_TOKEN }}
+                repository: AnomP29/local-airflow
+                token: ${{ secrets.REPO_ACCESS_TOKEN }}
 
 
             
