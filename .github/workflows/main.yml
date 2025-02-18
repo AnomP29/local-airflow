@@ -33,8 +33,6 @@ jobs:
               with:
                 images: |
                     docker.io/anompu/airflow-293-hub
-                tags: |
-                    type=semver,pattern={{version}}
 
             - # create a build kit builder instance
               name: Set up Docker Buildx
@@ -47,8 +45,11 @@ jobs:
                 context: .
                 file: ./Dockerfile
                 push: true
-                tags: ${{ steps.meta.outputs.tags }}
+                # tags: ${{ steps.meta.outputs.tags }}
                 labels: ${{ steps.meta.outputs.labels }}
+                tags : |
+                    ${{ secrets.DOCKERHUB_USERNAME }}/airflow-293-hub:${{ steps.vars.outputs.tag }}
+                    ${{ secrets.DOCKERHUB_USERNAME }}/airflow-293-hub:latest
 
 
 
