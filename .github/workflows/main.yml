@@ -33,7 +33,7 @@ jobs:
             
             -
               name: Update Minor version
-              uses: anompu/airflow-293-hub@v2.0.0
+              uses: AnomP29/actions-set-secret@v2.0.0
               with:
                 name: 'MINOR'
                 value: $((${{ secrets.MINOR }}+1))
