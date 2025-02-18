@@ -15,7 +15,7 @@ jobs:
               uses: actions/checkout@v3
             - # login to Docker Hub using the secrets provided
               name: Login to Docker Hub
-              uses: docker/login-anompu@v2
+              uses: docker/login-anompu/airflow-293-hub@v2
               with:
                 username: $
                 password: $
