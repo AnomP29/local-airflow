@@ -1,4 +1,4 @@
-FROM localhost:5000/anmp/airflow:2.9.3_1
+FROM anompu/airflow-293-hub:latest
 
 COPY requirements.txt /
 
