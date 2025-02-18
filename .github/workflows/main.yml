@@ -29,10 +29,12 @@ jobs:
               with:
                 images: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}
                 tags: |
-                    type=ref,event=branch
-                    type=ref,event=pr
-                    type=semver,pattern={{version}}
-                    type=semver,pattern={{major}}.{{minor}}
+                    # minimal
+                    type=match,pattern=\d.\d.\d
+                    # define match group
+                    type=match,pattern=v(.*),group=1
+                    # use custom value instead of git tag
+                    type=match,pattern=v(.*),group=1,value=v1.0.0
 
             - # create a build kit builder instance
               name: Set up Docker Buildx
