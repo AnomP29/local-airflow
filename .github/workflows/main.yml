@@ -19,31 +19,50 @@ jobs:
               name: Checkout
               uses: actions/checkout@v3
 
+            -
+                name: Build existin Docker Image
+                run: docker build . --file ./Dockerfile --tag anompu/airflow-293-hub:${{ secrets.MAJOR }}.${{ secrets.MINOR }}
+
             - # login to Docker Hub using the secrets provided
               name: Login to Docker Hub
               run: echo ${{ secrets.DOCKERHUB_TOKEN }} | docker login -u ${{ secrets.DOCKERHUB_USERNAME }} --password-stdin
 
-            
-            - name: Extract metadata for the Docker image
-              id: meta
-              uses: docker/metadata-action@98669ae865ea3cffbcbaa878cf57c20bbf1c6c38
-              with:
-                images: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}
-                tags: |
-                    type=semver,pattern={{raw}}
-                    type=semver,pattern={{raw}},value=v1.0.0
-
-            - # create a build kit builder instance
-              name: Set up Docker Buildx
-              uses: docker/setup-buildx-action@v2
             -
-                name: Build and push
-                uses: docker/build-push-action@v6
-                with:
-                  context: .
-                  push: ${{ github.event_name != 'pull_request' }}
-                  tags: ${{ steps.meta.outputs.tags }}
-                  labels: ${{ steps.meta.outputs.labels }}
+              name: Push to DockerHub
+              run: docker push anompu/airflow-293-hub:${{ secrets.MAJOR }}.${{ secrets.MINOR }}
+            
+            -
+              name: Update Minor version
+              uses: hmanzur/actions-set-secret@v2.0.0
+              with:
+                name: 'MINOR'
+                value: $((${{ secrets.MINOR }}+1))
+                repository: anompu/airflow-293-hub
+                token: ${{ secrets.DOCKERHUB_TOKEN }}
+
+
+            
+            # - name: Extract metadata for the Docker image
+            #   id: meta
+            #   uses: docker/metadata-action@98669ae865ea3cffbcbaa878cf57c20bbf1c6c38
+            #   with:
+            #     images: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}
+            #     tags: |
+            #         type=semver,pattern={{raw}}
+            #         type=semver,pattern={{raw}},value=v1.0.0
+
+            # - # create a build kit builder instance
+            #   name: Set up Docker Buildx
+            #   uses: docker/setup-buildx-action@v2
+
+            # -
+            #     name: Build and push
+            #     uses: docker/build-push-action@v6
+            #     with:
+            #       context: .
+            #       push: ${{ github.event_name != 'pull_request' }}
+            #       tags: ${{ steps.meta.outputs.tags }}
+            #       labels: ${{ steps.meta.outputs.labels }}
 
 
 
