@@ -33,6 +33,8 @@ jobs:
               with:
                 images: |
                     docker.io/anompu/airflow-293-hub
+                tags: |
+                    type=semver,pattern={{version}}
 
             - # create a build kit builder instance
               name: Set up Docker Buildx
