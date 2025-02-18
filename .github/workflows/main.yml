@@ -29,7 +29,7 @@ jobs:
               id: check_changes
               working-directory: ./
               run: |
-                watched_files=("./requirements.txt")
+                watched_files=("requirements.txt")
                 
                 if [[ ${{ github.event_name }} == 'pull_request' ]]; then
                   changed_files=$(git diff --name-only -r HEAD^1 HEAD)
