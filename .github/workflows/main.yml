@@ -34,6 +34,12 @@ jobs:
               id: extract-name
               run: echo "REPO_NAME=$(basename $GITHUB_REPOSITORY)" >> $GITHUB_ENV
 
+            - name: Extract current version from package.json
+              id: get-version
+              run: |
+                  version=$(node -p "require('./package.json').version.replace('-snapshot', '')")
+                  echo "VERSION=$version" >> $GITHUB_ENV  
+
             # - # create a build kit builder instance
             #   name: Set up Docker Buildx
             #   uses: docker/setup-buildx-action@v2
