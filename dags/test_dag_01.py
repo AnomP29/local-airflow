@@ -3,6 +3,8 @@ from airflow.operators.bash import BashOperator
 from datetime import datetime, timedelta
 
 import pandas as pd
+import psycopg2
+import petl as etl
 # import gspread
 from ruamel.yaml import YAML
 
