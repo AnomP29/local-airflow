@@ -17,8 +17,8 @@ jobs:
               name: Login to Docker Hub
               uses: docker/login-anompu/airflow-293-hub@v2
               with:
-                username: $
-                password: $
+                username: ${{ env.USERNAME }}
+                password: ${{ env.PASSWORD }}
             - # create a build kit builder instance
               name: Set up Docker Buildx
               uses: docker/setup-buildx-action@v2
