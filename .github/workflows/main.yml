@@ -23,6 +23,18 @@ jobs:
               name: Checkout
               uses: actions/checkout@v3
 
+            - 
+              name: Check for changes
+              id: check_changes
+              run: |
+                watched_files=("./reqiurements.txt")
+                
+                if [[ ${{ github.event_name }} == 'pull_request' ]]; then
+                  changed_files=$(git diff --name-only -r HEAD^1 HEAD)
+                else
+                  changed_files=$(git diff --name-only ${{ github.event.before }} ${{ github.event.after }})
+                fi
+            
             -
                 name: Build existin Docker Image
                 run: docker build . --file ./Dockerfile --tag anompu/airflow-293-hub:${{ secrets.MAJOR }}.${{ secrets.MINOR }}
