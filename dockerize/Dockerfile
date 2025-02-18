@@ -1,4 +1,4 @@
-FROM anompu/airflow-293-hub:latest
+FROM anompu/airflow-293-hub:v1
 
 COPY requirements.txt /
 
