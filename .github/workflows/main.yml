@@ -29,8 +29,7 @@ jobs:
               with:
                 images: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}
                 tags: |
-                    # use custom value instead of git tag
-                    type=match,pattern=v(.*),group=1,value=v1.0.0
+                    type=match,pattern=v(.*),group=1
 
             - # create a build kit builder instance
               name: Set up Docker Buildx
