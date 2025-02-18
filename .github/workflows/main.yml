@@ -29,7 +29,8 @@ jobs:
               id: check_changes
               uses: tj-actions/changed-files@v34
               with:
-                files: ../requirements.txt
+                working-directory: .
+                files: requirements.txt
         
             
             # -
