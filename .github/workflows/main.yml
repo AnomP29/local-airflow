@@ -4,7 +4,6 @@ on: # specify the build to trigger the automated ci/cd
     push:
         branches:
             - "main"
-        tags: 'v*'
 env: 
   REGISTRY: docker.io
   IMAGE_NAME: anompu/airflow-293-hub
