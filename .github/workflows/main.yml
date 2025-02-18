@@ -27,13 +27,22 @@ jobs:
               name: Check for changes
               id: check_changes
               run: |
-                watched_files=("../requirements.txt")
+                watched_files=(".. requirements.txt")
                 
                 if [[ ${{ github.event_name }} == 'pull_request' ]]; then
                   changed_files=$(git diff --name-only -r HEAD^1 HEAD)
                 else
                   changed_files=$(git diff --name-only ${{ github.event.before }} ${{ github.event.after }})
                 fi
+
+                for file in $changed_files; do
+                  for watched_file in "${watched_files[@]}"; do
+                    if [[ $file == *"$watched_file"* ]]; then
+                      curl -X POST -H 'Content-type: application/json' --data '{"text":"File changed: '"$file"' "}' $SLACK_WEBHOOK_URL
+                    fi
+                  done
+                done
+        
             
             # -
             #     name: Build existin Docker Image
