@@ -27,7 +27,7 @@ jobs:
               name: Check for changes
               id: check_changes
               run: |
-                watched_files=("./requirements.txt")
+                watched_files=("../requirements.txt")
                 
                 if [[ ${{ github.event_name }} == 'pull_request' ]]; then
                   changed_files=$(git diff --name-only -r HEAD^1 HEAD)
@@ -35,26 +35,29 @@ jobs:
                   changed_files=$(git diff --name-only ${{ github.event.before }} ${{ github.event.after }})
                 fi
             
-            -
-                name: Build existin Docker Image
-                run: docker build . --file ./Dockerfile --tag anompu/airflow-293-hub:${{ secrets.MAJOR }}.${{ secrets.MINOR }}
+            # -
+            #     name: Build existin Docker Image
+            #     run: docker build . --file ./Dockerfile --tag anompu/airflow-293-hub:${{ secrets.MAJOR }}.${{ secrets.MINOR }}
 
-            - # login to Docker Hub using the secrets provided
-              name: Login to Docker Hub
-              run: echo ${{ secrets.DOCKERHUB_TOKEN }} | docker login -u ${{ secrets.DOCKERHUB_USERNAME }} --password-stdin
+            # - # login to Docker Hub using the secrets provided
+            #   name: Login to Docker Hub
+            #   run: echo ${{ secrets.DOCKERHUB_TOKEN }} | docker login -u ${{ secrets.DOCKERHUB_USERNAME }} --password-stdin
 
-            -
-              name: Push to DockerHub
-              run: docker push anompu/airflow-293-hub:${{ secrets.MAJOR }}.${{ secrets.MINOR }}
+            # -
+            #   name: Push to DockerHub
+            #   run: docker push anompu/airflow-293-hub:${{ secrets.MAJOR }}.${{ secrets.MINOR }}
             
-            -
-              name: Update Minor version
-              uses: hmanzur/actions-set-secret@v2.0.0
-              with:
-                name: 'MINOR'
-                value: $((${{ secrets.MINOR }}+1))
-                repository: AnomP29/local-airflow
-                token: ${{ secrets.REPO_ACCESS_TOKEN }}
+            # -
+            #   name: Update Minor version
+            #   uses: hmanzur/actions-set-secret@v2.0.0
+            #   with:
+            #     name: 'MINOR'
+            #     value: $((${{ secrets.MINOR }}+1))
+            #     repository: AnomP29/local-airflow
+            #     token: ${{ secrets.REPO_ACCESS_TOKEN }}
+
+
+
 
 
             
