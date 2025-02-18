@@ -27,7 +27,7 @@ jobs:
             - 
               name: Check for changes
               id: check_changes
-              working-directory: ./app
+              working-directory: ./
               run: |
                 watched_files=("./requirements.txt")
                 
