@@ -32,6 +32,8 @@ jobs:
               uses: docker/metadata-action@98669ae865ea3cffbcbaa878cf57c20bbf1c6c38
               with:
                 images: docker.io/anompu/airflow-293-hub
+                tags:
+                    type=semver,pattern={{version}}
 
 
             - # create a build kit builder instance
