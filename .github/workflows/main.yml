@@ -29,35 +29,22 @@ jobs:
               with:
                 images: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}
                 tags: |
-                    type=ref,event=tags
+                    type=ref,event=branch
                     type=ref,event=pr
                     type=semver,pattern={{version}}
                     type=semver,pattern={{major}}.{{minor}}
 
-            # - name: Build the Docker image
-            #   run: docker build . --file Dockerfile --tag ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:${{ steps.meta.outputs.tags }}
-
             - # create a build kit builder instance
               name: Set up Docker Buildx
               uses: docker/setup-buildx-action@v2
-
-            - # build the container image and push it to Docker \
-              # Hub with the name clockbox.
-              name: Push the Docker image with the Latest tag
-              uses: docker/build-push-action@v4
-              with:
-                context: .
-                file: ./Dockerfile
-                push: true
-                tags: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:latest
-
-            - # build the container image and push it to Docker \
-              # Hub with the name clockbox.
-              name: Push the Docker image with the release tag
-              uses: docker/build-push-action@v4
-              with:
-                push: true
-                tags: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:${{ steps.meta.outputs.tags }}
+            -
+                name: Build and push
+                uses: docker/build-push-action@v6
+                with:
+                  context: .
+                  push: ${{ github.event_name != 'pull_request' }}
+                  tags: ${{ steps.meta.outputs.tags }}
+                  labels: ${{ steps.meta.outputs.labels }}
 
 
 
