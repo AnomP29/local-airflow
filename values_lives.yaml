@@ -65,7 +65,9 @@ containerLifecycleHooks: {}
 airflowHome: /opt/airflow
 
 # Default airflow repository -- overridden by all the specific images below
-defaultAirflowRepository: localhost:5000/anmp/airflow
+# defaultAirflowRepository: localhost:5000/anmp/airflow
+defaultAirflowRepository: anompu/airflow-293-hub
+
 
 # Default airflow tag to deploy
 defaultAirflowTag: "v1"
@@ -79,7 +81,7 @@ airflowVersion: "2.9.3"
 # Images
 images:
   airflow:
-    repository: localhost:5000/anmp/airflow
+    repository: anompu/airflow-293-hub
     tag: v1
     # Specifying digest takes precedence over tag.
     digest: ~
