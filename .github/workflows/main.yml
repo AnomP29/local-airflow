@@ -1,0 +1,6 @@
+name: local-airflow-actions
+
+on: # specify the build to trigger the automated ci/cd
+    push:
+        branches:
+            - "main"
