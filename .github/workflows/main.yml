@@ -57,11 +57,11 @@ jobs:
       - check-requirements
     if: |
       always() &&
-      (needs.check-requirements.result == 'success')
+      (${{ needs.check-requirements.result }} == 'success')
     runs-on: ubuntu-latest
     steps:
       - run: |
-          echo needs.check-requirements.result
+          echo ${{ needs.check-requirements.result }}
           
           
           # -
