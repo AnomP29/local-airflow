@@ -15,25 +15,31 @@ env:
 
 run-name: running tests for buildimage
 jobs:
+
+  check-requirements:
+    name: Check requierements file
+    runs-on: ubuntu-latest
+    steps:
+      - # checkout to the repository on the build machine
+        name: Checkout
+        uses: actions/checkout@v3
+      
+      -
+        name: Check for changes
+        id: check_changes
+        uses: tj-actions/changed-files@v34
+        with:
+          working-directory: .
+          files: requirements.txt
+      - 
+        name: Run step if any file(s) in the docs folder change
+        if: steps.check_changes.outputs.any_changed == 'true'
+        run: echo UI-kit is affected
   
-  build:
-      name: Build Docker-Image
-      runs-on: ubuntu-latest
-      steps:
-        - # checkout to the repository on the build machine
-          name: Checkout
-          uses: actions/checkout@v3
-        - 
-          name: Check for changes
-          id: check_changes
-          uses: tj-actions/changed-files@v34
-          with:
-            working-directory: .
-            files: requirements.txt
-        - 
-          name: Run step if any file(s) in the docs folder change
-          if: steps.check_changes.outputs.any_changed == 'true'
-          run: echo UI-kit is affected
+  # build:
+  #     name: Build Docker-Image
+  #     runs-on: ubuntu-latest
+  #     steps:
           
           
           # -
