@@ -35,6 +35,10 @@ jobs:
         name: Run step if any file(s) in the docs folder change
         if: steps.check_changes.outputs.any_changed == 'true'
         run: echo UI-kit is affected
+      - 
+        name: Prevent from running
+        if: steps.check_changes.outputs.any_changed != 'true'
+        run: exit 1
   
   # build:
   #     name: Build Docker-Image
