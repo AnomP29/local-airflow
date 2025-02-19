@@ -66,7 +66,7 @@ jobs:
           
       -
           name: Build existin Docker Image
-          run: docker build . --file ./Dockerfile --tag anompu/airflow-293-hub:${{ secrets.MAJOR }}.${{ secrets.MINOR }}
+          run: docker build . --file Dockerfile --tag anompu/airflow-293-hub:${{ secrets.MAJOR }}.${{ secrets.MINOR }}
          # - # login to Docker Hub using the secrets provided
           #   name: Login to Docker Hub
           #   run: echo ${{ secrets.DOCKERHUB_TOKEN }} | docker login -u ${{ secrets.DOCKERHUB_USERNAME }} --password-stdin
