@@ -48,7 +48,8 @@ jobs:
     steps:
       -
         name: testPrint
-        run: echo 'needs.check-requirements.result'
+        run: |
+          echo 'needs.check-requirements.result'
   
   build:
     name: Build Docker-Image
@@ -59,7 +60,8 @@ jobs:
       (needs.check-requirements.result == 'success')
     runs-on: ubuntu-latest
     steps:
-      - run: echo needs.check-requirements.result
+      - run: |
+          echo needs.check-requirements.result
           
           
           # -
