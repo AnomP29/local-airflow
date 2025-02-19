@@ -19,6 +19,8 @@ jobs:
   check-requirements:
     name: Check requierements file
     runs-on: ubuntu-latest
+    outputs:
+      output1: ${{steps.check_changes.outputs.any_changed}}
     steps:
       - # checkout to the repository on the build machine
         name: Checkout
@@ -49,7 +51,7 @@ jobs:
       -
         name: testPrint
         run: |
-          echo ${{ needs.check-requirements.result }}
+          echo ${{ needs.check-requirements.outputs.output1 }}
   
   build:
     name: Build Docker-Image
