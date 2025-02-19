@@ -46,7 +46,7 @@ jobs:
     steps:
       -
         name: testPrint
-        run: echo check-requirements.result
+        run: echo ${{ check-requirements.result }}
   
   build:
     name: Build Docker-Image
