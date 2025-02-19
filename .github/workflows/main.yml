@@ -60,13 +60,13 @@ jobs:
     if: needs.check-requirements.outputs.output1 == 'true'
     runs-on: ubuntu-latest
     steps:
-      - run: |
-          echo ${{ needs.check-requirements.result }}
+      # - run: |
+      #     echo ${{ needs.check-requirements.result }}
           
           
-          # -
-          #     name: Build existin Docker Image
-          #     run: docker build . --file ./Dockerfile --tag anompu/airflow-293-hub:${{ secrets.MAJOR }}.${{ secrets.MINOR }}
+      -
+          name: Build existin Docker Image
+          run: echo docker build . --file ./Dockerfile --tag anompu/airflow-293-hub:${{ secrets.MAJOR }}.${{ secrets.MINOR }}
          # - # login to Docker Hub using the secrets provided
           #   name: Login to Docker Hub
           #   run: echo ${{ secrets.DOCKERHUB_TOKEN }} | docker login -u ${{ secrets.DOCKERHUB_USERNAME }} --password-stdin
