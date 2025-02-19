@@ -49,7 +49,7 @@ jobs:
       -
         name: testPrint
         run: |
-          echo 'needs.check-requirements.result'
+          echo ${{ needs.check-requirements.result }}
   
   build:
     name: Build Docker-Image
