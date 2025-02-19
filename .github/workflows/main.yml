@@ -63,12 +63,15 @@ jobs:
       # - run: |
       #     echo ${{ needs.check-requirements.result }}
           
+      - # checkout to the repository on the build machine
+        name: Checkout
+        uses: actions/checkout@v3
           
       -
-          name: Build existing Docker Image
-          working-directory: .
-          run: |
-            docker build . --file Dockerfile --tag anompu/airflow-293-hub:${{ secrets.MAJOR }}.${{ secrets.MINOR }}
+        name: Build existing Docker Image
+        working-directory: .
+        run: |
+          docker build . --file Dockerfile --tag anompu/airflow-293-hub:${{ secrets.MAJOR }}.${{ secrets.MINOR }}
          # - # login to Docker Hub using the secrets provided
           #   name: Login to Docker Hub
           #   run: echo ${{ secrets.DOCKERHUB_TOKEN }} | docker login -u ${{ secrets.DOCKERHUB_USERNAME }} --password-stdin
