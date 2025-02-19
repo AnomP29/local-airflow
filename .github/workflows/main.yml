@@ -41,12 +41,14 @@ jobs:
         run: echo No changes
   
   test1:
-    name: Check requierements file
+    name: Checksrequierements file
+    needs: 
+      - check-requirements    
     runs-on: ubuntu-latest
     steps:
       -
         name: testPrint
-        run: echo ${{ check-requirements.result }}
+        run: echo 'needs.check-requirements.result'
   
   build:
     name: Build Docker-Image
