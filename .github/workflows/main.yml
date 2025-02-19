@@ -40,10 +40,16 @@ jobs:
         if: steps.check_changes.outputs.any_changed != 'true'
         run: echo No changes
   
-  # build:
-  #     name: Build Docker-Image
-  #     runs-on: ubuntu-latest
-  #     steps:
+  build:
+      name: Build Docker-Image
+      needs:
+        - check-requirements
+      if: |
+        always() &&
+        (needs.check-requirements.result == 'true')
+      runs-on: ubuntu-latest
+      steps:
+        - run: echo needs.check-requirements.result
           
           
           # -
