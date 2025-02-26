@@ -11,7 +11,7 @@ default_args = {
     'owner': 'AnmP',
     'retries': 3,
     'start_date': datetime(2024, 0o3, 0o4),
-    'catchup': False
+    'catchup': False,
     'retry_delay': timedelta(minutes=5)
 }
 
