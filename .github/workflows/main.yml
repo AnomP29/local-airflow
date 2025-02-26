@@ -42,17 +42,6 @@ jobs:
         if: steps.check_changes.outputs.any_changed != 'true'
         run: echo No changes
   
-  # test1:
-  #   name: Checksrequierements file
-  #   needs: 
-  #     - check-requirements    
-  #   runs-on: ubuntu-latest
-  #   steps:
-  #     -
-  #       name: testPrint
-  #       run: |
-  #         echo ${{ needs.check-requirements.outputs.output1 }}
-  
   build:
     name: Build Docker-Image
     needs:
@@ -72,12 +61,14 @@ jobs:
         working-directory: .
         run: |
           docker build . --file Dockerfile --tag anompu/airflow-293-hub:${{ secrets.MAJOR }}.${{ secrets.MINOR }}
-         # - # login to Docker Hub using the secrets provided
-          #   name: Login to Docker Hub
-          #   run: echo ${{ secrets.DOCKERHUB_TOKEN }} | docker login -u ${{ secrets.DOCKERHUB_USERNAME }} --password-stdin
-         # -
-          #   name: Push to DockerHub
-          #   run: docker push anompu/airflow-293-hub:${{ secrets.MAJOR }}.${{ secrets.MINOR }}
+         
+      - # login to Docker Hub using the secrets provided
+        name: Login to Docker Hub
+        run: echo ${{ secrets.DOCKERHUB_TOKEN }} | docker login -u ${{ secrets.DOCKERHUB_USERNAME }} --password-stdin
+      
+      -
+        name: Push to DockerHub
+        run: docker push anompu/airflow-293-hub:${{ secrets.MAJOR }}.${{ secrets.MINOR }}
           
           # -
           #   name: Update Minor version
