@@ -1,4 +1,15 @@
-FROM anompu/airflow-293-hub:V1.2
+# FROM anompu/airflow-293-hub:V1.2
+FROM apache/airflow:2.9.3
+
+USER root
+RUN apt-get update \
+  && apt-get install -y --no-install-recommends \
+         vim \
+  && apt-get autoremove -yqq --purge \
+  && apt-get clean \
+  && rm -rf /var/lib/apt/lists/*
+
+USER airflow
 
 COPY requirements.txt /
 
