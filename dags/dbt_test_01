@@ -8,15 +8,16 @@ from airflow.models import Variable
 import time
 
 default_args = {
-    'owner': 'Howdy',
+    'owner': 'AnmP',
     'retries': 3,
+    'start_date': datetime(2024, 0o3, 0o4),
+    'catchup': False
     'retry_delay': timedelta(minutes=5)
 }
 
 dag = DAG(
     'dbt_airflow_01',
-    start_date=days_ago(2),
-    catchup=False,
+    default_args = default_args,
     // schedule_interval=timedelta(days=1),
     schedule_interval=None,
     template_searchpath='/opt/airflow/dags/repo/dags/dbt/'
