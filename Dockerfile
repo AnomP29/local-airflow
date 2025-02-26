@@ -1,4 +1,4 @@
-FROM anompu/airflow-293-hub:v1.2
+FROM anompu/airflow-293-hub:V1.2
 
 WORKDIR /app
 
