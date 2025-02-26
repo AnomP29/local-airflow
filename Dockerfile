@@ -6,4 +6,4 @@ COPY requirements.txt /
 
 RUN pip install --upgrade pip
 
-RUN pip install -r --no-cache-dir "apache-airflow==${AIRFLOW_VERSION}" -r /requirements.txt
+RUN pip install -r /requirements.txt
