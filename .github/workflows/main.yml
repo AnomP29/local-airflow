@@ -16,31 +16,31 @@ env:
 run-name: running tests for buildimage
 jobs:
 
-  check-requirements:
-    name: Check requierements file
-    runs-on: ubuntu-latest
-    outputs:
-      output1: ${{steps.check_changes.outputs.any_changed}}
-    steps:
-      - # checkout to the repository on the build machine
-        name: Checkout
-        uses: actions/checkout@v3
+  # check-requirements:
+  #   name: Check requierements file
+  #   runs-on: ubuntu-latest
+  #   outputs:
+  #     output1: ${{steps.check_changes.outputs.any_changed}}
+  #   steps:
+  #     - # checkout to the repository on the build machine
+  #       name: Checkout
+  #       uses: actions/checkout@v3
       
-      -
-        name: Check for changes
-        id: check_changes
-        uses: tj-actions/changed-files@v34
-        with:
-          working-directory: .
-          files: requirements.txt
-      - 
-        name: Run step if any file(s) in the docs folder change
-        if: steps.check_changes.outputs.any_changed == 'true'
-        run: echo UI-kit is affected
-      - 
-        name: Prevent from running
-        if: steps.check_changes.outputs.any_changed != 'true'
-        run: echo No changes
+  #     -
+  #       name: Check for changes
+  #       id: check_changes
+  #       uses: tj-actions/changed-files@v34
+  #       with:
+  #         working-directory: .
+  #         files: requirements.txt
+  #     - 
+  #       name: Run step if any file(s) in the docs folder change
+  #       if: steps.check_changes.outputs.any_changed == 'true'
+  #       run: echo UI-kit is affected
+  #     - 
+  #       name: Prevent from running
+  #       if: steps.check_changes.outputs.any_changed != 'true'
+  #       run: echo No changes
   
   build:
     name: Build Docker-Image
@@ -70,14 +70,14 @@ jobs:
         name: Push to DockerHub
         run: docker push anompu/airflow-293-hub:${{ secrets.MAJOR }}.${{ secrets.MINOR }}
           
-          # -
-          #   name: Update Minor version
-          #   uses: hmanzur/actions-set-secret@v2.0.0
-          #   with:
-          #     name: 'MINOR'
-          #     value: $((${{ secrets.MINOR }}+1))
-          #     repository: AnomP29/local-airflow
-          #     token: ${{ secrets.REPO_ACCESS_TOKEN }}
+      -
+        name: Update Minor version
+        uses: hmanzur/actions-set-secret@v2.0.0
+        with:
+          name: 'MINOR'
+          value: $((${{ secrets.MINOR }}+1))
+          repository: AnomP29/local-airflow
+          token: ${{ secrets.REPO_ACCESS_TOKEN }}
          
           # - name: Extract metadata for the Docker image
           #   id: meta
