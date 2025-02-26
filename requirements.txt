@@ -1,4 +1,4 @@
 ruamel.yaml
 gspread
 # petl
-dbt-postgres:1.7.latest
+dbt-postgres==1.7.latest
