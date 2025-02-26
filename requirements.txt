@@ -1,4 +1,3 @@
 ruamel.yaml
 gspread
-# petl
-dbt-postgres==1.8
+petl
