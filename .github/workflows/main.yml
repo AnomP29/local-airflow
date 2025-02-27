@@ -44,9 +44,9 @@ jobs:
   
   build:
     name: Build Docker-Image
-    # needs:
-    #   - check-requirements
-    # if: needs.check-requirements.outputs.output1 == 'true'
+    needs:
+      - check-requirements
+    if: needs.check-requirements.outputs.output1 == 'true'
     runs-on: ubuntu-latest
     steps:
       # - run: |
