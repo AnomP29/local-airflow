@@ -35,7 +35,7 @@ dbt_task = KubernetesPodOperator(
     arguments=['run', '--profiles-dir', '/opt/airflow/dbt', '--project-dir', '/opt/airflow/dbt', '--no-partial-parse'],
     get_logs=True,
     dag=dag,
-    # is_delete_operator_pod=True
+    is_delete_operator_pod=True
 )
 
 dbt_task
