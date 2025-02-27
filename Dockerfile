@@ -1,7 +1,7 @@
 # FROM anompu/airflow-293-hub:V1.2
 FROM apache/airflow:2.9.3
 
-USER root
+USER airflow
 RUN apt-get update \
   && apt-get install -y --no-install-recommends \
          vim \
