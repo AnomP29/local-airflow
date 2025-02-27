@@ -21,7 +21,7 @@ WORKDIR /dbt
 
 COPY dbt/ .
 
-RUN chwon -R airflow:airflow dbt/
+RUN chown -R airflow:airflow dbt/
 
 RUN dbt clean && \ 
     dbt deps --project-dir .
