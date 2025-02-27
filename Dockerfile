@@ -9,7 +9,7 @@ RUN apt-get update \
   && apt-get clean \
   && rm -rf /var/lib/apt/lists/*
 
-USER anomp
+USER root
 
 WORKDIR /dbt
 
