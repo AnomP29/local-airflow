@@ -28,7 +28,7 @@ def toPostgres():
 
 default_args = {
     'owner': 'anomp',
-    'start_date': days_ago(1),
+    'start_date': datetime(2025, 02, 27),
     'catchup': False
 }
 
