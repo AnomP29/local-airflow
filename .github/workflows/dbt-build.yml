@@ -34,7 +34,6 @@ jobs:
                 if: steps.filter.outputs.path1 == 'false'
                 run: echo no changes
             
-            - run: 
                 
     build:
         name: Build dbt Image
