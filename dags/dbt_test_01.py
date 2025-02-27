@@ -28,6 +28,7 @@ dbt_task = KubernetesPodOperator(
     namespace='airflow-local',
     image='anompu/airflow-293-hub:V1.11', 
     image_pull_policy='IfNotPresent',
+    in_cluster=True,
     # service_account_name="airflow-local", 
     # cluster_context="docker-desktop",
     cmds=['dbt'],
