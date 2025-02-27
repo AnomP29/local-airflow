@@ -6,4 +6,4 @@ sources:
     tables:
       - name: customer
       - name: salesorderheader
-      - name: salesorderdetail
+      # - name: salesorderdetail
