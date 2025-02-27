@@ -1,4 +1,6 @@
-FROM ghcr.io/dbt-labs/dbt-postgres:1.9.latest
+# FROM ghcr.io/dbt-labs/dbt-postgres:1.9.latest
+FROM anompu/dbt_dev:v1.0.0
+
 
 # RUN apt-get update \
 #     && apt-get install -y --no-install-recommends
