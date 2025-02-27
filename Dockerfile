@@ -19,9 +19,8 @@ RUN pip install -r /requirements.txt
 
 WORKDIR /dbt
 
-COPY dbt/ .
+COPY dbt/ /opt/airflow/dbt
 
-RUN chown -R airflow ../dbt
 
 RUN dbt clean && \ 
     dbt deps --project-dir .
