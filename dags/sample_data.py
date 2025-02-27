@@ -10,6 +10,7 @@ import psycopg2
 import petl as etl
 # import gspread
 from ruamel.yaml import YAML
+from sqlalchemy import create_engine
 
 
 def toPostgres():
@@ -21,7 +22,10 @@ def toPostgres():
     df2['Customer'] = df2['CustName'] + df2['CustId'].astype(str)
     df2 = df2[['Customer', 'A', 'B']]    
     try:
-        conn = psycopg2.connect(database = 'dbt_local_proj', host = '172.27.16.1', user = 'postgres', password = 'postgres')
+        conn_string = 'postgresql://postgres:postgres@172.27.16.1/dbt_local_proj'
+        db = create_engine(conn_string)
+        conn = db.connect()
+        # conn = psycopg2.connect('dbt_local_proj', host = '172.27.16.1', user = 'postgres', password = 'postgres')
         df2.to_sql('sample_data', con=conn, if_exists='append', schema='dbt_test', index=False)
     except Exception as e:
         print(e)
