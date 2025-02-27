@@ -17,7 +17,7 @@ RUN pip install --upgrade pip
 RUN pip install dbt-postgres==1.9.0
 RUN pip install -r /requirements.txt
 
-WORKDIR /dbt
+WORKDIR /opt/airflow/dbt
 
 COPY dbt/ /opt/airflow/dbt
 
