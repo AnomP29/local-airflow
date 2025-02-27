@@ -25,16 +25,16 @@ dag = DAG(
 dbt_task = KubernetesPodOperator(
     task_id='dbt_airflow_pod',
     name='dbt_airflow_pod',
-    namespace='airflow-local',
-    image='anompu/airflow-293-hub:V1.11', 
-    image_pull_policy='IfNotPresent',
+    # namespace='airflow-local',
+    # image='anompu/airflow-293-hub:V1.11', 
+    # image_pull_policy='IfNotPresent',
     # service_account_name="airflow-local", 
-    cluster_context="docker-desktop",
+    # cluster_context="docker-desktop",
     cmds=['dbt'],
     arguments=['run', '--profiles-dir /opt/airflow/dbt --project-dir /opt/airflow/dbt --no-partial-parse'],
-    get_logs=True,
+    # get_logs=True,
     dag=dag,
-    is_delete_operator_pod=True
+    # is_delete_operator_pod=True
 )
 
 dbt_task
