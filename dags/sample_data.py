@@ -2,6 +2,7 @@ from airflow import DAG
 from airflow.operators.bash import BashOperator
 from airflow.operators.python_operator import PythonOperator
 from datetime import datetime, timedelta
+from airflow.utils.dates import days_ago
 
 import pandas as pd
 import numpy as np
