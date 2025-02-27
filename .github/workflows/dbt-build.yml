@@ -42,6 +42,23 @@ jobs:
         if: needs.check-changes.outputs.output1 != '[]'
         runs-on: ubuntu-latest
         steps:
-            - run: |
-                echo ${{ needs.check-changes.outputs.output1 }}
-
+            - # checkout to the repository on the build machine
+                name: Checkout
+                uses: actions/checkout@v3
+    
+            # - run: |
+            #     echo ${{ needs.check-changes.outputs.output1 }}
+            -
+                name: Build-dbt-Image
+                working-directory: .
+                run: |
+                  docker build . --file Dockerfile --tag anompu/dbt_dev:V1.0.0
+                 
+            - # login to Docker Hub using the secrets provided
+                name: Login to Docker Hub
+                run: echo ${{ secrets.DOCKERHUB_TOKEN }} | docker login -u ${{ secrets.DOCKERHUB_USERNAME }} --password-stdin
+              
+            -
+                name: Push to DockerHub
+                run: docker push anompu/dbt_dev:V1.0.0
+        
