@@ -14,3 +14,219 @@ Runtime Error
 [0m12:50:53.113917 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f1afead54b0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f1afdaaa650>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f1afdaaa5c0>]}
 [0m12:50:53.114341 [debug] [MainThread]: Flushing usage events
 [0m12:50:54.724793 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m13:35:16.709466 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fa7817914e0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fa780762470>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fa780762410>]}
+
+
+============================== 13:35:16.713260 | 11d7ebd8-8359-408f-b1db-9bcb958bb424 ==============================
+[0m13:35:16.713260 [info ] [MainThread]: Running with dbt=1.9.2
+[0m13:35:16.714330 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': './', 'debug': 'False', 'warn_error': 'None', 'log_path': 'logs', 'version_check': 'True', 'fail_fast': 'False', 'use_colors': 'True', 'use_experimental_parser': 'False', 'empty': 'False', 'quiet': 'False', 'no_print': 'None', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'static_parser': 'True', 'log_format': 'default', 'invocation_command': 'dbt run --profiles-dir ./', 'target_path': 'None', 'introspect': 'True', 'send_anonymous_usage_stats': 'True'}
+[0m13:35:16.715311 [error] [MainThread]: Encountered an error:
+Runtime Error
+  No dbt_project.yml found at expected path /home/anomp/kubedevel/local-airflow/dbt_project.yml
+  Verify that each entry within packages.yml (and their transitive dependencies) contains a file named dbt_project.yml
+  
+[0m13:35:16.716837 [debug] [MainThread]: Resource report: {"command_name": "run", "command_success": false, "command_wall_clock_time": 0.104848534, "process_in_blocks": "104", "process_kernel_time": 0.120819, "process_mem_max_rss": "86464", "process_out_blocks": "16", "process_user_time": 1.329015}
+[0m13:35:16.717650 [debug] [MainThread]: Command `dbt run` failed at 13:35:16.717419 after 0.11 seconds
+[0m13:35:16.718251 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fa7817914e0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fa780762b60>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fa780762470>]}
+[0m13:35:16.718919 [debug] [MainThread]: Flushing usage events
+[0m13:35:18.025701 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m13:35:26.249767 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f6e1cae5510>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f6e1d9764d0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f6e1d976470>]}
+
+
+============================== 13:35:26.252522 | 8c3eb990-f272-47f0-a967-1c9a46899b5c ==============================
+[0m13:35:26.252522 [info ] [MainThread]: Running with dbt=1.9.2
+[0m13:35:26.253112 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': './dbt', 'version_check': 'True', 'debug': 'False', 'log_path': 'logs', 'fail_fast': 'False', 'warn_error': 'None', 'use_colors': 'True', 'use_experimental_parser': 'False', 'empty': 'False', 'quiet': 'False', 'no_print': 'None', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'introspect': 'True', 'log_format': 'default', 'static_parser': 'True', 'target_path': 'None', 'invocation_command': 'dbt run --profiles-dir ./dbt', 'send_anonymous_usage_stats': 'True'}
+[0m13:35:26.253640 [error] [MainThread]: Encountered an error:
+Runtime Error
+  No dbt_project.yml found at expected path /home/anomp/kubedevel/local-airflow/dbt_project.yml
+  Verify that each entry within packages.yml (and their transitive dependencies) contains a file named dbt_project.yml
+  
+[0m13:35:26.255421 [debug] [MainThread]: Resource report: {"command_name": "run", "command_success": false, "command_wall_clock_time": 0.06515471, "process_in_blocks": "0", "process_kernel_time": 0.050127, "process_mem_max_rss": "86520", "process_out_blocks": "0", "process_user_time": 1.273229}
+[0m13:35:26.256011 [debug] [MainThread]: Command `dbt run` failed at 13:35:26.255841 after 0.07 seconds
+[0m13:35:26.256409 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f6e1cae5510>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f6e1d976b90>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f6e1d9764d0>]}
+[0m13:35:26.256834 [debug] [MainThread]: Flushing usage events
+[0m13:35:27.419751 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m13:36:08.299972 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7faa6ef614e0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7faa6df2e500>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7faa6df2e4a0>]}
+
+
+============================== 13:36:08.302616 | 911be1b7-0270-410c-99f1-31766a136285 ==============================
+[0m13:36:08.302616 [info ] [MainThread]: Running with dbt=1.9.2
+[0m13:36:08.303424 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': './dbt', 'version_check': 'True', 'fail_fast': 'False', 'log_path': '/home/anomp/kubedevel/local-airflow/logs', 'debug': 'False', 'warn_error': 'None', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'empty': 'False', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'static_parser': 'True', 'invocation_command': 'dbt run --profiles-dir ./dbt', 'introspect': 'True', 'target_path': 'None', 'log_format': 'default', 'send_anonymous_usage_stats': 'True'}
+[0m13:36:08.465070 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '911be1b7-0270-410c-99f1-31766a136285', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7faa6ff376a0>]}
+[0m13:36:08.529808 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '911be1b7-0270-410c-99f1-31766a136285', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7faa6e5d3280>]}
+[0m13:36:08.530699 [info ] [MainThread]: Registered adapter: postgres=1.9.0
+[0m13:36:08.614783 [debug] [MainThread]: checksum: 12b12750b70de726cfd89136b8e24afc3f3e77597a97bff40ab7e5f9b39d5e18, vars: {}, profile: , target: , version: 1.9.2
+[0m13:36:08.615706 [info ] [MainThread]: Unable to do partial parsing because saved manifest not found. Starting full parse.
+[0m13:36:08.616252 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'partial_parser', 'label': '911be1b7-0270-410c-99f1-31766a136285', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7faa6e59a380>]}
+[0m13:36:09.411529 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '911be1b7-0270-410c-99f1-31766a136285', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7faa6d344910>]}
+[0m13:36:09.458374 [debug] [MainThread]: Wrote artifact WritableManifest to /home/anomp/kubedevel/local-airflow/target/manifest.json
+[0m13:36:09.461021 [debug] [MainThread]: Wrote artifact SemanticManifest to /home/anomp/kubedevel/local-airflow/target/semantic_manifest.json
+[0m13:36:09.473864 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '911be1b7-0270-410c-99f1-31766a136285', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7faa6cbd6e00>]}
+[0m13:36:09.474514 [info ] [MainThread]: Found 433 macros
+[0m13:36:09.475376 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '911be1b7-0270-410c-99f1-31766a136285', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7faa6cbd5360>]}
+[0m13:36:09.477740 [warn ] [MainThread]: Nothing to do. Try checking your model configs and model specification args
+[0m13:36:09.478678 [debug] [MainThread]: Command end result
+[0m13:36:09.505317 [debug] [MainThread]: Wrote artifact WritableManifest to /home/anomp/kubedevel/local-airflow/target/manifest.json
+[0m13:36:09.507562 [debug] [MainThread]: Wrote artifact SemanticManifest to /home/anomp/kubedevel/local-airflow/target/semantic_manifest.json
+[0m13:36:09.513141 [debug] [MainThread]: Wrote artifact RunExecutionResult to /home/anomp/kubedevel/local-airflow/target/run_results.json
+[0m13:36:09.514052 [debug] [MainThread]: Resource report: {"command_name": "run", "command_success": true, "command_wall_clock_time": 1.2682643, "process_in_blocks": "0", "process_kernel_time": 0.100084, "process_mem_max_rss": "99284", "process_out_blocks": "2496", "process_user_time": 2.392028}
+[0m13:36:09.514496 [debug] [MainThread]: Command `dbt run` succeeded at 13:36:09.514387 after 1.27 seconds
+[0m13:36:09.515011 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7faa6ef614e0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7faa6ee2f490>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7faa6d70f280>]}
+[0m13:36:09.515506 [debug] [MainThread]: Flushing usage events
+[0m13:36:11.072237 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m13:36:32.009051 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f0ceafe9480>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f0ce9fb6530>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f0ce9fb64d0>]}
+
+
+============================== 13:36:32.011574 | d7800f7c-8cc9-40a9-a065-0151fc6568af ==============================
+[0m13:36:32.011574 [info ] [MainThread]: Running with dbt=1.9.2
+[0m13:36:32.012210 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'fail_fast': 'False', 'profiles_dir': 'dbt', 'log_path': '/home/anomp/kubedevel/local-airflow/logs', 'version_check': 'True', 'debug': 'False', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'empty': 'False', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'static_parser': 'True', 'introspect': 'True', 'invocation_command': 'dbt run --profiles-dir dbt', 'target_path': 'None', 'log_format': 'default', 'send_anonymous_usage_stats': 'True'}
+[0m13:36:32.170647 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': 'd7800f7c-8cc9-40a9-a065-0151fc6568af', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f0ce9768640>]}
+[0m13:36:32.248854 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': 'd7800f7c-8cc9-40a9-a065-0151fc6568af', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f0cea65b2e0>]}
+[0m13:36:32.249807 [info ] [MainThread]: Registered adapter: postgres=1.9.0
+[0m13:36:32.330037 [debug] [MainThread]: checksum: 12b12750b70de726cfd89136b8e24afc3f3e77597a97bff40ab7e5f9b39d5e18, vars: {}, profile: , target: , version: 1.9.2
+[0m13:36:32.397833 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 0 files changed.
+[0m13:36:32.398299 [debug] [MainThread]: Partial parsing enabled, no changes found, skipping parsing
+[0m13:36:32.403617 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': 'd7800f7c-8cc9-40a9-a065-0151fc6568af', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f0ce8719f30>]}
+[0m13:36:32.453859 [debug] [MainThread]: Wrote artifact WritableManifest to /home/anomp/kubedevel/local-airflow/target/manifest.json
+[0m13:36:32.456248 [debug] [MainThread]: Wrote artifact SemanticManifest to /home/anomp/kubedevel/local-airflow/target/semantic_manifest.json
+[0m13:36:32.466721 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': 'd7800f7c-8cc9-40a9-a065-0151fc6568af', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f0ce871b760>]}
+[0m13:36:32.467436 [info ] [MainThread]: Found 433 macros
+[0m13:36:32.467871 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'd7800f7c-8cc9-40a9-a065-0151fc6568af', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f0ce8719300>]}
+[0m13:36:32.469759 [warn ] [MainThread]: Nothing to do. Try checking your model configs and model specification args
+[0m13:36:32.472013 [debug] [MainThread]: Command end result
+[0m13:36:32.492266 [debug] [MainThread]: Wrote artifact WritableManifest to /home/anomp/kubedevel/local-airflow/target/manifest.json
+[0m13:36:32.494324 [debug] [MainThread]: Wrote artifact SemanticManifest to /home/anomp/kubedevel/local-airflow/target/semantic_manifest.json
+[0m13:36:32.498813 [debug] [MainThread]: Wrote artifact RunExecutionResult to /home/anomp/kubedevel/local-airflow/target/run_results.json
+[0m13:36:32.500907 [debug] [MainThread]: Resource report: {"command_name": "run", "command_success": true, "command_wall_clock_time": 0.5489027, "process_in_blocks": "0", "process_kernel_time": 0.129878, "process_mem_max_rss": "99520", "process_out_blocks": "1672", "process_user_time": 1.728377}
+[0m13:36:32.502428 [debug] [MainThread]: Command `dbt run` succeeded at 13:36:32.502155 after 0.55 seconds
+[0m13:36:32.503244 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f0ceafe9480>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f0ce97a1240>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f0ce934d9f0>]}
+[0m13:36:32.503876 [debug] [MainThread]: Flushing usage events
+[0m13:36:34.233420 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m13:37:07.704949 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f5dc3e254b0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f5dc2df2590>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f5dc2df25f0>]}
+
+
+============================== 13:37:07.707439 | f6842444-90fe-4630-a9ea-eed120c3f98f ==============================
+[0m13:37:07.707439 [info ] [MainThread]: Running with dbt=1.9.2
+[0m13:37:07.708024 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'version_check': 'True', 'fail_fast': 'False', 'log_path': '/home/anomp/kubedevel/local-airflow/logs', 'debug': 'False', 'profiles_dir': 'dbt', 'use_colors': 'True', 'use_experimental_parser': 'False', 'empty': 'False', 'quiet': 'False', 'no_print': 'None', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'static_parser': 'True', 'log_format': 'default', 'invocation_command': 'dbt run --profiles-dir dbt', 'target_path': 'None', 'introspect': 'True', 'send_anonymous_usage_stats': 'True'}
+[0m13:37:07.710916 [error] [MainThread]: Encountered an error:
+Runtime Error
+  Could not find profile named 'dbt/dbt-postgres'
+[0m13:37:07.711915 [debug] [MainThread]: Resource report: {"command_name": "run", "command_success": false, "command_wall_clock_time": 0.073901854, "process_in_blocks": "0", "process_kernel_time": 0.049922, "process_mem_max_rss": "86708", "process_out_blocks": "8", "process_user_time": 1.2281}
+[0m13:37:07.712368 [debug] [MainThread]: Command `dbt run` failed at 13:37:07.712260 after 0.07 seconds
+[0m13:37:07.712759 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f5dc3e254b0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f5dc2df23e0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f5dc2df3fd0>]}
+[0m13:37:07.713165 [debug] [MainThread]: Flushing usage events
+[0m13:37:08.836883 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m13:38:11.434807 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f2c1eef1420>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f2c1fd82440>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f2c1fd823e0>]}
+
+
+============================== 13:38:11.437216 | d4a9d3c0-376f-40d7-954c-36b0fa0e000c ==============================
+[0m13:38:11.437216 [info ] [MainThread]: Running with dbt=1.9.2
+[0m13:38:11.437746 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'version_check': 'True', 'profiles_dir': 'dbt', 'log_path': '/home/anomp/kubedevel/local-airflow/logs', 'debug': 'False', 'fail_fast': 'False', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'empty': 'False', 'log_format': 'default', 'static_parser': 'True', 'introspect': 'True', 'invocation_command': 'dbt run --profiles-dir dbt', 'target_path': 'None', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'send_anonymous_usage_stats': 'True'}
+[0m13:38:11.594943 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': 'd4a9d3c0-376f-40d7-954c-36b0fa0e000c', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f2c1feca470>]}
+[0m13:38:11.670881 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': 'd4a9d3c0-376f-40d7-954c-36b0fa0e000c', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f2c1edc3700>]}
+[0m13:38:11.671835 [info ] [MainThread]: Registered adapter: postgres=1.9.0
+[0m13:38:11.761669 [debug] [MainThread]: checksum: 12b12750b70de726cfd89136b8e24afc3f3e77597a97bff40ab7e5f9b39d5e18, vars: {}, profile: , target: , version: 1.9.2
+[0m13:38:11.829114 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 0 files changed.
+[0m13:38:11.829597 [debug] [MainThread]: Partial parsing enabled, no changes found, skipping parsing
+[0m13:38:11.834974 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': 'd4a9d3c0-376f-40d7-954c-36b0fa0e000c', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f2c1c901ed0>]}
+[0m13:38:11.880945 [debug] [MainThread]: Wrote artifact WritableManifest to /home/anomp/kubedevel/local-airflow/target/manifest.json
+[0m13:38:11.883275 [debug] [MainThread]: Wrote artifact SemanticManifest to /home/anomp/kubedevel/local-airflow/target/semantic_manifest.json
+[0m13:38:11.893344 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': 'd4a9d3c0-376f-40d7-954c-36b0fa0e000c', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f2c1c900520>]}
+[0m13:38:11.894105 [info ] [MainThread]: Found 433 macros
+[0m13:38:11.894616 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'd4a9d3c0-376f-40d7-954c-36b0fa0e000c', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f2c1c9026b0>]}
+[0m13:38:11.896487 [warn ] [MainThread]: Nothing to do. Try checking your model configs and model specification args
+[0m13:38:11.898748 [debug] [MainThread]: Command end result
+[0m13:38:11.919786 [debug] [MainThread]: Wrote artifact WritableManifest to /home/anomp/kubedevel/local-airflow/target/manifest.json
+[0m13:38:11.921284 [debug] [MainThread]: Wrote artifact SemanticManifest to /home/anomp/kubedevel/local-airflow/target/semantic_manifest.json
+[0m13:38:11.924452 [debug] [MainThread]: Wrote artifact RunExecutionResult to /home/anomp/kubedevel/local-airflow/target/run_results.json
+[0m13:38:11.925612 [debug] [MainThread]: Resource report: {"command_name": "run", "command_success": true, "command_wall_clock_time": 0.55804056, "process_in_blocks": "0", "process_kernel_time": 0.069966, "process_mem_max_rss": "99400", "process_out_blocks": "1672", "process_user_time": 1.71918}
+[0m13:38:11.926385 [debug] [MainThread]: Command `dbt run` succeeded at 13:38:11.926130 after 0.56 seconds
+[0m13:38:11.926914 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f2c1eef1420>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f2c1fd93280>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f2c1f366a10>]}
+[0m13:38:11.927437 [debug] [MainThread]: Flushing usage events
+[0m13:38:13.154419 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m13:38:40.090445 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7ff03b8fd510>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7ff03a8ce500>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7ff03a8ce4a0>]}
+
+
+============================== 13:38:40.093159 | e6048099-689f-45bc-b478-631e68537778 ==============================
+[0m13:38:40.093159 [info ] [MainThread]: Running with dbt=1.9.2
+[0m13:38:40.093832 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': 'dbt', 'debug': 'False', 'version_check': 'True', 'log_path': '/home/anomp/kubedevel/local-airflow/logs', 'warn_error': 'None', 'fail_fast': 'True', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'empty': 'False', 'log_format': 'default', 'static_parser': 'True', 'invocation_command': 'dbt run --profiles-dir dbt --fail-fast', 'introspect': 'True', 'target_path': 'None', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'send_anonymous_usage_stats': 'True'}
+[0m13:38:40.251398 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': 'e6048099-689f-45bc-b478-631e68537778', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7ff03b7c9e40>]}
+[0m13:38:40.318885 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': 'e6048099-689f-45bc-b478-631e68537778', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7ff039d08700>]}
+[0m13:38:40.319763 [info ] [MainThread]: Registered adapter: postgres=1.9.0
+[0m13:38:40.399691 [debug] [MainThread]: checksum: 12b12750b70de726cfd89136b8e24afc3f3e77597a97bff40ab7e5f9b39d5e18, vars: {}, profile: , target: , version: 1.9.2
+[0m13:38:40.465288 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 0 files changed.
+[0m13:38:40.465704 [debug] [MainThread]: Partial parsing enabled, no changes found, skipping parsing
+[0m13:38:40.470883 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': 'e6048099-689f-45bc-b478-631e68537778', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7ff038d15fc0>]}
+[0m13:38:40.515851 [debug] [MainThread]: Wrote artifact WritableManifest to /home/anomp/kubedevel/local-airflow/target/manifest.json
+[0m13:38:40.518794 [debug] [MainThread]: Wrote artifact SemanticManifest to /home/anomp/kubedevel/local-airflow/target/semantic_manifest.json
+[0m13:38:40.528364 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': 'e6048099-689f-45bc-b478-631e68537778', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7ff038d15c30>]}
+[0m13:38:40.529158 [info ] [MainThread]: Found 433 macros
+[0m13:38:40.529716 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'e6048099-689f-45bc-b478-631e68537778', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7ff038d14ee0>]}
+[0m13:38:40.531479 [warn ] [MainThread]: Nothing to do. Try checking your model configs and model specification args
+[0m13:38:40.533900 [debug] [MainThread]: Command end result
+[0m13:38:40.555069 [debug] [MainThread]: Wrote artifact WritableManifest to /home/anomp/kubedevel/local-airflow/target/manifest.json
+[0m13:38:40.557169 [debug] [MainThread]: Wrote artifact SemanticManifest to /home/anomp/kubedevel/local-airflow/target/semantic_manifest.json
+[0m13:38:40.560645 [debug] [MainThread]: Wrote artifact RunExecutionResult to /home/anomp/kubedevel/local-airflow/target/run_results.json
+[0m13:38:40.561647 [debug] [MainThread]: Resource report: {"command_name": "run", "command_success": true, "command_wall_clock_time": 0.5288148, "process_in_blocks": "0", "process_kernel_time": 0.09003, "process_mem_max_rss": "99344", "process_out_blocks": "1664", "process_user_time": 1.610541}
+[0m13:38:40.562093 [debug] [MainThread]: Command `dbt run` succeeded at 13:38:40.561956 after 0.53 seconds
+[0m13:38:40.562484 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7ff03b8fd510>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7ff03c743820>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7ff039946470>]}
+[0m13:38:40.562866 [debug] [MainThread]: Flushing usage events
+[0m13:38:41.720894 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m13:39:53.159039 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fea5eb1d510>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fea5f9ae590>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fea5f9ae530>]}
+
+
+============================== 13:39:53.161489 | 69a3a8b0-e943-4786-a9ce-ade3273f3b17 ==============================
+[0m13:39:53.161489 [info ] [MainThread]: Running with dbt=1.9.2
+[0m13:39:53.162081 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': 'dbt', 'version_check': 'True', 'fail_fast': 'True', 'log_path': '/home/anomp/kubedevel/local-airflow/logs', 'debug': 'False', 'warn_error': 'None', 'use_colors': 'True', 'use_experimental_parser': 'False', 'empty': 'False', 'quiet': 'False', 'no_print': 'None', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'introspect': 'True', 'static_parser': 'True', 'invocation_command': 'dbt run --profiles-dir dbt --fail-fast -m customer_sales', 'target_path': 'None', 'log_format': 'default', 'send_anonymous_usage_stats': 'True'}
+[0m13:39:53.330190 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '69a3a8b0-e943-4786-a9ce-ade3273f3b17', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fea5faf7d90>]}
+[0m13:39:53.401197 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '69a3a8b0-e943-4786-a9ce-ade3273f3b17', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fea5f8ff6a0>]}
+[0m13:39:53.402209 [info ] [MainThread]: Registered adapter: postgres=1.9.0
+[0m13:39:53.511575 [debug] [MainThread]: checksum: 12b12750b70de726cfd89136b8e24afc3f3e77597a97bff40ab7e5f9b39d5e18, vars: {}, profile: , target: , version: 1.9.2
+[0m13:39:53.570739 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 0 files changed.
+[0m13:39:53.571177 [debug] [MainThread]: Partial parsing enabled, no changes found, skipping parsing
+[0m13:39:53.576289 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '69a3a8b0-e943-4786-a9ce-ade3273f3b17', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fea5bf02020>]}
+[0m13:39:53.623905 [debug] [MainThread]: Wrote artifact WritableManifest to /home/anomp/kubedevel/local-airflow/target/manifest.json
+[0m13:39:53.628683 [debug] [MainThread]: Wrote artifact SemanticManifest to /home/anomp/kubedevel/local-airflow/target/semantic_manifest.json
+[0m13:39:53.639769 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '69a3a8b0-e943-4786-a9ce-ade3273f3b17', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fea5bf03730>]}
+[0m13:39:53.640583 [info ] [MainThread]: Found 433 macros
+[0m13:39:53.641056 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '69a3a8b0-e943-4786-a9ce-ade3273f3b17', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fea5bf012d0>]}
+[0m13:39:53.642021 [warn ] [MainThread]: The selection criterion 'customer_sales' does not match any enabled nodes
+[0m13:39:53.643691 [warn ] [MainThread]: Nothing to do. Try checking your model configs and model specification args
+[0m13:39:53.646161 [debug] [MainThread]: Command end result
+[0m13:39:53.667943 [debug] [MainThread]: Wrote artifact WritableManifest to /home/anomp/kubedevel/local-airflow/target/manifest.json
+[0m13:39:53.669994 [debug] [MainThread]: Wrote artifact SemanticManifest to /home/anomp/kubedevel/local-airflow/target/semantic_manifest.json
+[0m13:39:53.673544 [debug] [MainThread]: Wrote artifact RunExecutionResult to /home/anomp/kubedevel/local-airflow/target/run_results.json
+[0m13:39:53.674445 [debug] [MainThread]: Resource report: {"command_name": "run", "command_success": true, "command_wall_clock_time": 0.57331115, "process_in_blocks": "0", "process_kernel_time": 0.109674, "process_mem_max_rss": "99492", "process_out_blocks": "1672", "process_user_time": 1.714907}
+[0m13:39:53.674889 [debug] [MainThread]: Command `dbt run` succeeded at 13:39:53.674782 after 0.57 seconds
+[0m13:39:53.675275 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fea5eb1d510>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fea5f8ff6a0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fea5c3f3130>]}
+[0m13:39:53.675690 [debug] [MainThread]: Flushing usage events
+[0m13:39:54.914585 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m13:52:08.803241 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f179bb314b0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f179ab06560>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f179ab06500>]}
+
+
+============================== 13:52:08.806093 | cd3e5eff-3cfc-44b1-9715-17c74125b656 ==============================
+[0m13:52:08.806093 [info ] [MainThread]: Running with dbt=1.9.2
+[0m13:52:08.806818 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': 'dbt', 'version_check': 'True', 'fail_fast': 'True', 'log_path': '/home/anomp/kubedevel/local-airflow/logs', 'warn_error': 'None', 'debug': 'False', 'use_colors': 'True', 'use_experimental_parser': 'False', 'empty': 'False', 'quiet': 'False', 'no_print': 'None', 'log_format': 'default', 'invocation_command': 'dbt run --profiles-dir dbt --fail-fast -m customer_sales', 'introspect': 'True', 'static_parser': 'True', 'target_path': 'None', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'send_anonymous_usage_stats': 'True'}
+[0m13:52:08.981449 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': 'cd3e5eff-3cfc-44b1-9715-17c74125b656', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f179cb2f9d0>]}
+[0m13:52:09.042359 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': 'cd3e5eff-3cfc-44b1-9715-17c74125b656', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f179b1a32b0>]}
+[0m13:52:09.043262 [info ] [MainThread]: Registered adapter: postgres=1.9.0
+[0m13:52:09.120064 [debug] [MainThread]: checksum: 12b12750b70de726cfd89136b8e24afc3f3e77597a97bff40ab7e5f9b39d5e18, vars: {}, profile: , target: , version: 1.9.2
+[0m13:52:09.180051 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 0 files changed.
+[0m13:52:09.180740 [debug] [MainThread]: Partial parsing enabled, no changes found, skipping parsing
+[0m13:52:09.187997 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': 'cd3e5eff-3cfc-44b1-9715-17c74125b656', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f1798f19fc0>]}
+[0m13:52:09.239700 [debug] [MainThread]: Wrote artifact WritableManifest to /home/anomp/kubedevel/local-airflow/target/manifest.json
+[0m13:52:09.242873 [debug] [MainThread]: Wrote artifact SemanticManifest to /home/anomp/kubedevel/local-airflow/target/semantic_manifest.json
+[0m13:52:09.253418 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': 'cd3e5eff-3cfc-44b1-9715-17c74125b656', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f1798f1b670>]}
+[0m13:52:09.254195 [info ] [MainThread]: Found 433 macros
+[0m13:52:09.254630 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'cd3e5eff-3cfc-44b1-9715-17c74125b656', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f1798f19270>]}
+[0m13:52:09.255218 [warn ] [MainThread]: The selection criterion 'customer_sales' does not match any enabled nodes
+[0m13:52:09.256659 [warn ] [MainThread]: Nothing to do. Try checking your model configs and model specification args
+[0m13:52:09.258880 [debug] [MainThread]: Command end result
+[0m13:52:09.279935 [debug] [MainThread]: Wrote artifact WritableManifest to /home/anomp/kubedevel/local-airflow/target/manifest.json
+[0m13:52:09.281418 [debug] [MainThread]: Wrote artifact SemanticManifest to /home/anomp/kubedevel/local-airflow/target/semantic_manifest.json
+[0m13:52:09.284655 [debug] [MainThread]: Wrote artifact RunExecutionResult to /home/anomp/kubedevel/local-airflow/target/run_results.json
+[0m13:52:09.285525 [debug] [MainThread]: Resource report: {"command_name": "run", "command_success": true, "command_wall_clock_time": 0.54164296, "process_in_blocks": "0", "process_kernel_time": 0.099851, "process_mem_max_rss": "99456", "process_out_blocks": "1672", "process_user_time": 1.70746}
+[0m13:52:09.285966 [debug] [MainThread]: Command `dbt run` succeeded at 13:52:09.285858 after 0.54 seconds
+[0m13:52:09.286351 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f179bb314b0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f179cb2f9d0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f1798f0b1f0>]}
+[0m13:52:09.286742 [debug] [MainThread]: Flushing usage events
+[0m13:52:10.614381 [debug] [MainThread]: An error was encountered while trying to flush usage events
