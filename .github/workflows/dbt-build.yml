@@ -39,7 +39,7 @@ jobs:
         name: Build dbt Image
         needs: 
             - check-changes
-        if: needs.check-changes.outputs.output1 == 'true'
+        # if: needs.check-changes.outputs.output1 == 'true'
         runs-on: ubuntu-latest
         steps:
             - run: |
