@@ -1,7 +1,7 @@
 # FROM anompu/airflow-293-hub:V1.2
 FROM apache/airflow:2.9.3
 
-USER root
+USER airflow
 RUN apt-get update \
   && apt-get install -y --no-install-recommends \
          vim \
@@ -9,7 +9,7 @@ RUN apt-get update \
   && apt-get clean \
   && rm -rf /var/lib/apt/lists/*
 
-USER airflow
+# USER airflow
 COPY requirements.txt /
 RUN pip install --upgrade pip
 RUN pip install dbt-postgres==1.9.0
@@ -17,9 +17,9 @@ RUN pip install -r /requirements.txt
 
 WORKDIR /dbt
 
-USER root
+# USER root
 COPY dbt/ .
 
 
 RUN dbt clean && \ 
-    dbt deps
+    dbt deps --project-dir .
