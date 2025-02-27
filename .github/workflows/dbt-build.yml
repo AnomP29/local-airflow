@@ -43,5 +43,5 @@ jobs:
         runs-on: ubuntu-latest
         steps:
             - run: |
-                echo ${{ needs.check-changes.result }}
+                echo ${{ steps.check_changes.outputs.output1.result }}
 
