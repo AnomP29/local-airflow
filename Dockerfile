@@ -18,5 +18,6 @@ COPY requirements.txt /
 
 RUN pip install --upgrade pip
 RUN pip install dbt-postgres==1.9.0
-RUN dbt deps
+RUN dbt clean && \ 
+    dbt deps
 RUN pip install -r /requirements.txt

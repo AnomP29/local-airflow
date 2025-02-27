@@ -70,7 +70,7 @@ defaultAirflowRepository: anompu/airflow-293-hub
 
 
 # Default airflow tag to deploy
-defaultAirflowTag: "V1.5"
+defaultAirflowTag: "V1.6"
 
 # Default airflow digest. If specified, it takes precedence over tag
 defaultAirflowDigest: ~
@@ -82,7 +82,7 @@ airflowVersion: "2.9.3"
 images:
   airflow:
     repository: anompu/airflow-293-hub
-    tag: V1.5
+    tag: V1.6
     # Specifying digest takes precedence over tag.
     digest: ~
     pullPolicy: IfNotPresent
