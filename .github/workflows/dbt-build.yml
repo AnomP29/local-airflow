@@ -1,0 +1,37 @@
+name: Build-dbt-Image-and-Push
+
+on:
+    push:
+        branches: [ main ]
+
+jobs:
+    check-changes:
+        name: check-folder
+        runs-on: ubuntu-latest
+        steps:
+            - # checkout to the repository on the build machine
+                name: Checkout
+                uses: actions/checkout@v3
+            
+            - # filtering path
+                name: Checkout
+                uses: anmp/paths-filter@v2
+                id: filter
+                with:
+                    filters: |
+                        path1:
+                            - 'dbt/**'
+
+            - # run only if 'path1' files were changed
+                name: path1 tests
+                if: steps.filter.outputs.path1 == 'true'
+                run: echo berubah
+
+            - # run only if 'path1' files were changed
+                name: Prevent from running
+                if: steps.filter.outputs.path1 == 'false'
+                run: echo no changes
+                
+    # build-and-push:
+    #     runs-on: ubuntu-latest
+
