@@ -1,6 +1,8 @@
 name: 'my_dbtpostgres_project'
 version: '1.0.0'
 
+profile: dbt-postgres
+
 model-paths: ["models"]
 # analysis-paths: ["analysis"] 
 # test-paths: ["tests"]
