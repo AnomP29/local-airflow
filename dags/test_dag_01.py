@@ -44,8 +44,8 @@ t2 = BashOperator(
 
 t3 = BashOperator(
     task_id = 'dbt_test_01',
-    # bash_command ='dbt run --profiles-dir /opt/airflow/dbt --project-dir /opt/airflow/dbt',
-    bash_command ='dbt build --no-partial-parse',
+    bash_command ='dbt run --profiles-dir /opt/airflow/dbt --project-dir /opt/airflow/dbt --no-partial-parse',
+    # bash_command ='dbt build --no-partial-parse',
     dag = dag
 )
 
