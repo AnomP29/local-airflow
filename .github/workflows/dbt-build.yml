@@ -33,12 +33,13 @@ jobs:
                 name: Prevent from running
                 if: steps.filter.outputs.path1 == 'false'
                 run: echo no changes
+            
                 
     build:
         name: Build dbt Image
-        needs: 
-            - check-changes
-        if: needs.check-changes.outputs.output1 == 'true'
+        # needs: 
+        #     - check-changes
+        # if: needs.check-changes.outputs.output1 == 'true'
         runs-on: ubuntu-latest
         steps:
             - run: |
