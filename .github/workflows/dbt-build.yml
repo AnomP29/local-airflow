@@ -52,7 +52,7 @@ jobs:
                 name: Build-dbt-Image
                 working-directory: .
                 run: |
-                  docker build . --file Dockerfile --tag anompu/dbt_dev:V1.0.0
+                  docker build . --file ./dbt.Dockerfile --tag anompu/dbt_dev:V1.0.0
                  
             - # login to Docker Hub using the secrets provided
                 name: Login to Docker Hub
