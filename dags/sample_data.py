@@ -21,7 +21,7 @@ def toPostgres():
     df2['Customer'] = df2['CustName'] + df2['CustId'].astype(str)
     df2 = df2[['Customer', 'A', 'B']]    
     try:
-        conn = psycopg2.connect(database = 'dbt_local_proj', host = '172.27.16.1', user = 'postgres', password = 'dataEngineer01')
+        conn = psycopg2.connect(database = 'dbt_local_proj', host = '172.27.16.1', user = 'postgres', password = 'postgres')
         df2.to_sql('sample_data', con=conn, if_exists='append', index=False)
     except Exception as e:
         print(e)
