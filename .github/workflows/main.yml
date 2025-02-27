@@ -70,14 +70,14 @@ jobs:
         name: Push to DockerHub
         run: docker push anompu/airflow-293-hub:${{ secrets.MAJOR }}.${{ secrets.MINOR }}
           
-      -
-        name: Update Minor version
-        uses: hmanzur/actions-set-secret@v2.0.0
-        with:
-          name: 'MINOR'
-          value: $((${{ secrets.MINOR }}+1))
-          repository: AnomP29/local-airflow
-          token: ${{ secrets.REPO_ACCESS_TOKEN }}
+      # -
+      #   name: Update Minor version
+      #   uses: hmanzur/actions-set-secret@v2.0.0
+      #   with:
+      #     name: 'MINOR'
+      #     value: $((${{ secrets.MINOR }}+1))
+      #     repository: AnomP29/local-airflow
+      #     token: ${{ secrets.REPO_ACCESS_TOKEN }}
          
           # - name: Extract metadata for the Docker image
           #   id: meta

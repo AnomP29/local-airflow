@@ -6,7 +6,7 @@
 ) }}
 
 
-SELECT count(customerid) as customer_count FROM
-{{ source('osdp_sales', 'customer') }};
+SELECT count(customer_id) as customer_count, now() as created_date FROM
+{{ source('osdp_sales', 'customer') }}
 
 
