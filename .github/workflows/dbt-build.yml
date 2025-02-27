@@ -15,7 +15,7 @@ jobs:
             
             - # filtering path
                 name: Checkout
-                uses: anmp/paths-filter@v2
+                uses: dorny/paths-filter@v2
                 id: filter
                 with:
                     filters: |
