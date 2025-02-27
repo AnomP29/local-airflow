@@ -1,0 +1,70 @@
+[0m12:51:44.126749 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f6ceaacd510>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f6ce9a9e3b0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f6ce9a9e320>]}
+
+
+============================== 12:51:44.131037 | 7a1c89a9-8b66-46ad-a63d-cf7e38b6eb22 ==============================
+[0m12:51:44.131037 [info ] [MainThread]: Running with dbt=1.9.2
+[0m12:51:44.131608 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': '/home/anomp/kubedevel/local-airflow/dbt', 'version_check': 'True', 'debug': 'False', 'log_path': '/home/anomp/kubedevel/local-airflow/dbt/logs', 'fail_fast': 'False', 'warn_error': 'None', 'use_colors': 'True', 'use_experimental_parser': 'False', 'empty': 'None', 'quiet': 'False', 'no_print': 'None', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'invocation_command': 'dbt deps', 'introspect': 'True', 'static_parser': 'True', 'target_path': 'None', 'log_format': 'default', 'send_anonymous_usage_stats': 'True'}
+[0m12:51:44.277782 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '7a1c89a9-8b66-46ad-a63d-cf7e38b6eb22', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f6cea999e40>]}
+[0m12:51:44.289042 [debug] [MainThread]: Set downloads directory='/tmp/dbt-downloads-t91msukc'
+[0m12:51:44.289731 [debug] [MainThread]: Making package index registry request: GET https://hub.getdbt.com/api/v1/index.json
+[0m12:51:45.141712 [debug] [MainThread]: Response from registry index: GET https://hub.getdbt.com/api/v1/index.json 200
+[0m12:51:45.145338 [debug] [MainThread]: Making package registry request: GET https://hub.getdbt.com/api/v1/dbt-labs/dbt_utils.json
+[0m12:51:45.206796 [debug] [MainThread]: Response from registry: GET https://hub.getdbt.com/api/v1/dbt-labs/dbt_utils.json 200
+[0m12:51:45.250974 [debug] [MainThread]: Making package registry request: GET https://hub.getdbt.com/api/v1/dbt-labs/codegen.json
+[0m12:51:45.922074 [debug] [MainThread]: Response from registry: GET https://hub.getdbt.com/api/v1/dbt-labs/codegen.json 200
+[0m12:51:46.013001 [info ] [MainThread]: Updating lock file in file path: /home/anomp/kubedevel/local-airflow/dbt/package-lock.yml
+[0m12:51:46.019452 [debug] [MainThread]: Set downloads directory='/tmp/dbt-downloads-bqtqszwc'
+[0m12:51:46.034334 [info ] [MainThread]: Installing dbt-labs/dbt_utils
+[0m12:51:46.590153 [info ] [MainThread]: Installed from version 0.8.6
+[0m12:51:46.590926 [info ] [MainThread]: Updated version available: 1.3.0
+[0m12:51:46.592140 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'package', 'label': '7a1c89a9-8b66-46ad-a63d-cf7e38b6eb22', 'property_': 'install', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f6ce9b706d0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f6ce99e7e20>]}
+[0m12:51:46.593578 [info ] [MainThread]: Installing dbt-labs/codegen
+[0m12:51:46.990946 [info ] [MainThread]: Installed from version 0.7.0
+[0m12:51:46.994436 [info ] [MainThread]: Updated version available: 0.13.1
+[0m12:51:46.998086 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'package', 'label': '7a1c89a9-8b66-46ad-a63d-cf7e38b6eb22', 'property_': 'install', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f6ce9b706d0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f6ce9895f90>]}
+[0m12:51:47.001705 [info ] [MainThread]: 
+[0m12:51:47.005964 [info ] [MainThread]: Updates available for packages: ['dbt-labs/dbt_utils', 'dbt-labs/codegen']                 
+Update your versions in packages.yml, then run dbt deps
+[0m12:51:47.013126 [debug] [MainThread]: Resource report: {"command_name": "deps", "command_success": true, "command_wall_clock_time": 2.9447863, "process_in_blocks": "16", "process_kernel_time": 0.127574, "process_mem_max_rss": "90768", "process_out_blocks": "3512", "process_user_time": 1.992122}
+[0m12:51:47.016577 [debug] [MainThread]: Command `dbt deps` succeeded at 12:51:47.015884 after 2.95 seconds
+[0m12:51:47.020018 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f6ceaacd510>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f6cea999e40>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f6ce99e7e80>]}
+[0m12:51:47.024009 [debug] [MainThread]: Flushing usage events
+[0m12:51:48.692722 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m12:55:18.253901 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fdd538c1360>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fdd54752230>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fdd547521d0>]}
+
+
+============================== 12:55:18.262420 | 439dfdc7-9165-444d-8008-ec53f843cc08 ==============================
+[0m12:55:18.262420 [info ] [MainThread]: Running with dbt=1.9.2
+[0m12:55:18.263864 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': '/home/anomp/kubedevel/local-airflow/dbt', 'fail_fast': 'False', 'version_check': 'True', 'log_path': '/home/anomp/kubedevel/local-airflow/dbt/logs', 'debug': 'False', 'warn_error': 'None', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'empty': 'None', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'introspect': 'True', 'invocation_command': 'dbt debug --config-dir', 'static_parser': 'True', 'target_path': 'None', 'log_format': 'default', 'send_anonymous_usage_stats': 'True'}
+[0m12:55:18.273152 [info ] [MainThread]: To view your profiles.yml file, run:
+
+xdg-open /home/anomp/kubedevel/local-airflow/dbt
+[0m12:55:18.274351 [debug] [MainThread]: Resource report: {"command_name": "debug", "command_success": true, "command_wall_clock_time": 0.11676877, "process_in_blocks": "0", "process_kernel_time": 0.130197, "process_mem_max_rss": "87020", "process_out_blocks": "8", "process_user_time": 1.782704}
+[0m12:55:18.274889 [debug] [MainThread]: Command `dbt debug` succeeded at 12:55:18.274765 after 0.12 seconds
+[0m12:55:18.275321 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fdd538c1360>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fdd54752170>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fdd54752200>]}
+[0m12:55:18.275777 [debug] [MainThread]: Flushing usage events
+[0m12:55:19.875608 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m12:57:38.507934 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7efe396e5540>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7efe3a576500>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7efe3a5764a0>]}
+
+
+============================== 12:57:38.510771 | ff919f67-34c0-47db-ac10-f9a875247c40 ==============================
+[0m12:57:38.510771 [info ] [MainThread]: Running with dbt=1.9.2
+[0m12:57:38.511953 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': '.', 'fail_fast': 'False', 'debug': 'False', 'log_path': '/home/anomp/kubedevel/local-airflow/dbt/logs', 'version_check': 'True', 'warn_error': 'None', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'empty': 'False', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'introspect': 'True', 'invocation_command': 'dbt run --profiles-dir .', 'static_parser': 'True', 'target_path': 'None', 'log_format': 'default', 'send_anonymous_usage_stats': 'True'}
+[0m12:57:38.514029 [error] [MainThread]: Encountered an error:
+Runtime Error
+  dbt cannot run because no profile was specified for this dbt project.
+  To specify a profile for this project, add a line like the this to
+  your dbt_project.yml file:
+  
+  profile: [profile name]
+  
+  Here, [profile name] should be replaced with a profile name
+  defined in your profiles.yml file. You can find profiles.yml here:
+  
+  /home/anomp/kubedevel/local-airflow/dbt/profiles.yml
+  
+[0m12:57:38.515263 [debug] [MainThread]: Resource report: {"command_name": "run", "command_success": false, "command_wall_clock_time": 0.07299641, "process_in_blocks": "0", "process_kernel_time": 0.030046, "process_mem_max_rss": "86632", "process_out_blocks": "16", "process_user_time": 1.372143}
+[0m12:57:38.516072 [debug] [MainThread]: Command `dbt run` failed at 12:57:38.515921 after 0.07 seconds
+[0m12:57:38.516520 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7efe396e5540>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7efe3a576ce0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7efe3a576560>]}
+[0m12:57:38.517093 [debug] [MainThread]: Flushing usage events
+[0m12:57:40.032988 [debug] [MainThread]: An error was encountered while trying to flush usage events
