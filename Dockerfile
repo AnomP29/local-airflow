@@ -13,6 +13,7 @@ USER airflow
 
 WORKDIR /dbt
 
+COPY dbt/ .
 COPY requirements.txt /
 
 RUN pip install --upgrade pip
