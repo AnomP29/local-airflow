@@ -8,6 +8,8 @@ jobs:
     check-changes:
         name: check-folder
         runs-on: ubuntu-latest
+        outputs:
+            output1: ${{steps.filter.outputs.changes}}      
         steps:
             - # checkout to the repository on the build machine
                 name: Checkout
@@ -32,6 +34,13 @@ jobs:
                 if: steps.filter.outputs.path1 == 'false'
                 run: echo no changes
                 
-    # build-and-push:
-    #     runs-on: ubuntu-latest
+    build:
+        name: Build dbt Image
+        needs: 
+            - check-changes
+        if: needs.check-changes.outputs.output1 == 'true'
+        runs-on: ubuntu-latest
+        steps:
+            - run: |
+                echo ${{ needs.check-changes.result }}
 
