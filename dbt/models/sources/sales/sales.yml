@@ -1,0 +1,9 @@
+version: 2
+
+sources:
+  - name: osdp_sales
+    schema: sales
+    tables:
+      - name: customer
+      - name: salesorderheader
+      - name: salesorderdetail 
