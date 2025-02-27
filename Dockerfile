@@ -15,7 +15,6 @@ COPY requirements.txt /
 
 RUN pip install dbt-postgres==1.9.0
 RUN pip install --upgrade pip
-# RUN pip install -r /requirements.txt
 
 USER root
 
@@ -28,3 +27,4 @@ RUN chown -R airflow:root ../dbt
 USER airflow
 RUN dbt clean && \ 
     dbt deps --project-dir .
+RUN pip install -r /requirements.txt
