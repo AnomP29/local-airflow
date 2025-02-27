@@ -35,7 +35,7 @@ default_args = {
 dag = DAG(
     'Sample_data',
     default_args = default_args,
-    schedule_interval='5 * * * *'
+    schedule_interval='30 * * * *'
 )
 
 data_sample = PythonOperator(
