@@ -42,4 +42,10 @@ t2 = BashOperator(
     dag = dag
 )
 
+t3 = BashOperator(
+    task_id = 'dbt_test_01',
+    bash_command ='dbt run --profiles-dir /opt/airflow/dbt --project-dir /opt/airflow/dbt',
+    dag = dag
+)
+
 t1 >> t2
