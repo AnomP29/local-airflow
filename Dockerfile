@@ -9,9 +9,6 @@ RUN apt-get update \
   && apt-get clean \
   && rm -rf /var/lib/apt/lists/*
 
-
-
-
 USER airflow
 
 COPY requirements.txt /
@@ -20,8 +17,14 @@ RUN pip install dbt-postgres==1.9.0
 RUN pip install --upgrade pip
 # RUN pip install -r /requirements.txt
 
+USER root
+
 WORKDIR /opt/airflow/dbt
 
 COPY dbt/ /opt/airflow/dbt
+
+RUN chown -R airflow:root ../dbt
+
+USER airflow
 RUN dbt clean && \ 
     dbt deps --project-dir .
