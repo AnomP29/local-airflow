@@ -1,0 +1,1 @@
+{"_invocation_id": "09b39f63-5176-4951-b6bd-2d1b8b395c87", "linked": {"0": {"name": "source.my_dbtpostgres_project.osdp_sales.customer", "type": "source", "succ": [2]}, "1": {"name": "source.my_dbtpostgres_project.osdp_sales.salesorderheader", "type": "source"}, "2": {"name": "model.my_dbtpostgres_project.customer_sales", "type": "model"}}}
