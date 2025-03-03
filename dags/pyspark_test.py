@@ -32,7 +32,7 @@ default_args = {
 dag = DAG(
     'Spark_Tut',
     default_args = default_args,
-    schedule_interval='None'
+    schedule_interval=None
 )
 
 spark_sample = PythonOperator(
