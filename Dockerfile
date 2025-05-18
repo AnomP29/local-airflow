@@ -2,14 +2,14 @@
 FROM apache/airflow:2.9.3
 
 USER root
-RUN apt-get update && apt-get install -y --no-install-recommends \
-  openjdk-11-jdk-headless  \
-  # default-jdk \
-  vim \
-  awscli \
-  && apt-get autoremove -yqq --purge \
-  && apt-get clean \
-  && rm -rf /var/lib/apt/lists/* 
+# Add Debian main & backports to get access to openjdk-11
+RUN echo "deb http://deb.debian.org/debian bookworm main" >> /etc/apt/sources.list && \
+    echo "deb http://deb.debian.org/debian bookworm-updates main" >> /etc/apt/sources.list && \
+    echo "deb http://deb.debian.org/debian bookworm-backports main" >> /etc/apt/sources.list && \
+    apt-get update && \
+    apt-get install -y --no-install-recommends openjdk-11-jdk && \
+    apt-get clean && \
+    rm -rf /var/lib/apt/lists/*
 
 # Set JAVA_HOME environment variable
 ENV JAVA_HOME=/usr/lib/jvm/java-11-openjdk-amd64
