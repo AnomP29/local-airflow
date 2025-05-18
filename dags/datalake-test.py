@@ -20,6 +20,26 @@ default_args = {
     'catchup': False
 }
 
+
+def spark_builder():
+    print('a')
+    builder = SparkSession.builder \
+        .appName("MyApp") \
+        .master("spark://172.18.0.6:7077") \
+        .enableHiveSupport() \
+        .config("spark.hadoop.fs.s3a.endpoint", "http://minio:9000") \
+        .config("spark.hadoop.fs.s3a.access.key", "minioadmin") \
+        .config("spark.hadoop.fs.s3a.secret.key", "minioadmin") \
+        .config("spark.hadoop.fs.s3a.path.style.access", "true") \
+        .config("spark.hadoop.fs.s3a.addressing.style", "path") \
+        .config("spark.hadoop.fs.s3a.connection.ssl.enabled", "false") \
+        .config("spark.hadoop.fs.s3a.impl", "org.apache.hadoop.fs.s3a.S3AFileSystem")
+    spark = builder.getOrCreate()
+    spark.sql("SHOW TABLES").show()
+    return spark.sql("SHOW TABLES").show()
+
+
+
 with DAG(
     'Datalake-Test',
     default_args = default_args,
@@ -27,7 +47,12 @@ with DAG(
 
 ) as dag:
     start = EmptyOperator(task_id="start")
+    spark_test_1 = PythonOperator(
+        task_id='spark_test_1',
+        provide_context=True,
+        python_callable=spark_builder
+        )
     task1 = EmptyOperator(task_id="task1")
     end = EmptyOperator(task_id="end")
 
-    start >> task1 >> end
+    start >> spark_test_1 >> end
