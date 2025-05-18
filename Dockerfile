@@ -2,12 +2,13 @@
 FROM apache/airflow:2.9.3
 
 USER root
-RUN apt-get update \
-  && apt-get install -y openjdk-11-jdk && rm -rf /var/lib/apt/lists/* \
-         vim \
+RUN apt-get update && apt-get install --no-install-recommends \  
+  openjdk-11-jdk  \
+  vim \
+  awscli \
   && apt-get autoremove -yqq --purge \
   && apt-get clean \
-  && rm -rf /var/lib/apt/lists/*
+  && rm -rf /var/lib/apt/lists/* 
 
 # Set JAVA_HOME environment variable
 ENV JAVA_HOME=/usr/lib/jvm/java-11-openjdk-amd64

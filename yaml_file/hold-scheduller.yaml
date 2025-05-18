@@ -1,0 +1,22 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: airflow-scheduler-unlocker
+  namespace: airflow-local
+spec:
+  template:
+    spec:
+      containers:
+      - name: wait-and-scale
+        image: bitnami/kubectl:latest
+        command:
+        - /bin/bash
+        - -c
+        - |
+          echo "⏳ Waiting for pods..."
+          kubectl wait --for=condition=ready pod --all -n airflow --timeout=300s
+          echo "✅ Scaling scheduler..."
+          kubectl scale deployment airflow-scheduler -n airflow --replicas=1
+      restartPolicy: Never
+      serviceAccountName: airflow-admin  # Needs permissions to scale
+  backoffLimit: 1

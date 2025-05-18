@@ -437,7 +437,9 @@ fernetKeySecretName: airflow-fernet-key
 
 # Flask secret key for Airflow Webserver: `[webserver] secret_key` in airflow.cfg
 webserverSecretKey: ~
+# f64c20ea7b6a1c3ea5f7bde9cc3a5e2f
 webserverSecretKeySecretName: airflow-webserver-secret-key
+# airflow-webserver-secret-key
 
 # In order to use kerberos you need to create secret containing the keytab file
 # The secret name should follow naming convention of the application where resources are
@@ -2375,8 +2377,9 @@ ports:
   statsdScrape: 9102
   pgbouncer: 6543
   pgbouncerScrape: 9127
+  apiServer: 8080
   # rpcServer support is experimental / dev purpose only and will later be renamed
-  _rpcServer: 9080
+  # _rpcServer: 9080
 
 # Define any ResourceQuotas for namespace
 quotas: {}

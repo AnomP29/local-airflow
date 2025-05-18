@@ -1,8 +1,8 @@
 apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
-  name: airflow-logs-01
-  namespace: local-airflow
+  name: airflow-logs-02
+  namespace: airflow-local
   labels:
     app: airflow-logs
 spec:

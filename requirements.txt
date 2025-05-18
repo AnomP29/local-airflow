@@ -2,3 +2,4 @@ ruamel.yaml
 gspread
 petl
 pyspark==3.5
+boto3
