@@ -21,9 +21,10 @@ default_args = {
 }
 
 with DAG(
-    'Datalake Test',
+    'Datalake-Test',
     default_args = default_args,
     schedule_interval=None
+
 ) as dag:
     start = EmptyOperator(task_id="start")
     task1 = EmptyOperator(task_id="task1")

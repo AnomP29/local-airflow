@@ -1463,14 +1463,14 @@ webserver:
     type: ClusterIP
     ## service annotations
     annotations: {}
-    ports:
-      - name: airflow-ui
-        port: "{{ .Values.ports.airflowUI }}"
-    # To change the port used to access the webserver:
     # ports:
     #   - name: airflow-ui
-    #     port: 80
-    #     targetPort: airflow-ui
+    #     port: "{{ .Values.ports.airflowUI }}"
+    # To change the port used to access the webserver:
+    ports:
+      - name: airflow-ui
+        port: 8181
+        targetPort: airflow-ui
     # To only expose a sidecar, not the webserver directly:
     # ports:
     #   - name: only_sidecar
@@ -1523,6 +1523,8 @@ webserver:
 
   # env: []
   env:
+    - name: AIRFLOW__WEBSERVER__WEB_SERVER_PORT
+      value: "8181"    
     - name: AWS_ACCESS_KEY_ID
       valueFrom:
         secretKeyRef:
@@ -2417,7 +2419,7 @@ ports:
   statsdScrape: 9102
   pgbouncer: 6543
   pgbouncerScrape: 9127
-  apiServer: 8080
+  apiServer: 8181
   # rpcServer support is experimental / dev purpose only and will later be renamed
   # _rpcServer: 9080
 
