@@ -3,7 +3,7 @@ FROM apache/airflow:2.9.3
 
 USER root
 # Add Debian main & backports to get access to openjdk-11
-RUN apt-get update && apt-get install -y --no-install-recommends && \
+RUN apt-get update && apt-get install -y --no-install-recommends \
     wget \
     ca-certificates \
     tar \
