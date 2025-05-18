@@ -18,7 +18,7 @@ ENV JAVA_VERSION=11
 ENV JAVA_DISTRO=temurin
 
 RUN mkdir -p /opt/java && \
-    wget -qO /tmp/openjdk.tar.gz https://github.com/adoptium/temurin11-binaries/releases/latest/download/OpenJDK11U-jdk_x64_linux_hotspot.tar.gz && \
+    wget -q https://github.com/adoptium/temurin11-binaries/releases/download/jdk-11.0.22+7/OpenJDK11U-jdk_x64_linux_hotspot_11.0.22_7.tar.gz -O /tmp/java.tar.gz && \
     tar -xzf /tmp/openjdk.tar.gz -C /opt/java --strip-components=1 && \
     rm /tmp/openjdk.tar.gz
 
