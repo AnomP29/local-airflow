@@ -3,16 +3,27 @@ FROM apache/airflow:2.9.3
 
 USER root
 # Add Debian main & backports to get access to openjdk-11
-RUN echo "deb http://deb.debian.org/debian bookworm main" >> /etc/apt/sources.list && \
-    echo "deb http://deb.debian.org/debian bookworm-updates main" >> /etc/apt/sources.list && \
-    echo "deb http://deb.debian.org/debian bookworm-backports main" >> /etc/apt/sources.list && \
-    apt-get update && \
-    apt-get install -y --no-install-recommends openjdk-11-jdk && \
+RUN apt-get update && apt-get install -y --no-install-recommends && \
+    wget \
+    ca-certificates \
+    tar \
+    gzip \
+    vim \
+    awscli && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/*
 
+# Download and install OpenJDK 11 from Adoptium
+ENV JAVA_VERSION=11
+ENV JAVA_DISTRO=temurin
+
+RUN mkdir -p /opt/java && \
+    wget -qO /tmp/openjdk.tar.gz https://github.com/adoptium/temurin11-binaries/releases/latest/download/OpenJDK11U-jdk_x64_linux_hotspot.tar.gz && \
+    tar -xzf /tmp/openjdk.tar.gz -C /opt/java --strip-components=1 && \
+    rm /tmp/openjdk.tar.gz
+
 # Set JAVA_HOME environment variable
-ENV JAVA_HOME=/usr/lib/jvm/java-11-openjdk-amd64
+ENV JAVA_HOME=/opt/java
 ENV PATH="$JAVA_HOME/bin:$PATH"
 
 USER airflow
