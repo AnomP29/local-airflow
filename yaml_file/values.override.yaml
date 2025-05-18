@@ -1,0 +1,56 @@
+images:
+  airflow:
+    repository: anompu/airflow-293-hub
+    tag: V1.11
+    pullPolicy: IfNotPresent
+
+workers:
+  replicas: 1
+
+  # Set environment variables (read from Kubernetes Secret)
+  env:
+    - name: AWS_ACCESS_KEY_ID
+      valueFrom:
+        secretKeyRef:
+          name: datalake-cred
+          key: MINIO_ROOT_USER
+    - name: AWS_SECRET_ACCESS_KEY
+      valueFrom:
+        secretKeyRef:
+          name: datalake-cred
+          key: MINIO_ROOT_PASSWORD
+    - name: AWS_ENDPOINT_URL
+      value: "http://172.18.0.2:9000"
+
+  # Optional: Add curl or awscli or any side tooling via extra containers
+  extraContainers: []
+
+webserver:
+  env:
+    - name: AWS_ACCESS_KEY_ID
+      valueFrom:
+        secretKeyRef:
+          name: datalake-cred
+          key: MINIO_ROOT_USER
+    - name: AWS_SECRET_ACCESS_KEY
+      valueFrom:
+        secretKeyRef:
+          name: datalake-cred
+          key: MINIO_ROOT_PASSWORD
+    - name: AWS_ENDPOINT_URL
+      value: "http://172.18.0.2:9000"
+
+scheduler:
+  env:
+    - name: AWS_ACCESS_KEY_ID
+      valueFrom:
+        secretKeyRef:
+          name: datalake-cred
+          key: MINIO_ROOT_USER
+    - name: AWS_SECRET_ACCESS_KEY
+      valueFrom:
+        secretKeyRef:
+          name: datalake-cred
+          key: MINIO_ROOT_PASSWORD
+    - name: AWS_ENDPOINT_URL
+      value: "http://172.18.0.2:9000"

@@ -778,7 +778,20 @@ workers:
     securityContexts:
       container: {}
 
-  env: []
+  # env: []
+  env:
+    - name: AWS_ACCESS_KEY_ID
+      valueFrom:
+        secretKeyRef:
+          name: datalake-cred
+          key: MINIO_ROOT_USER
+    - name: AWS_SECRET_ACCESS_KEY
+      valueFrom:
+        secretKeyRef:
+          name: datalake-cred
+          key: MINIO_ROOT_PASSWORD
+    - name: AWS_ENDPOINT_URL
+      value: "http://172.18.0.2:9000"
 
   volumeClaimTemplates: []
   # Additional volumeClaimTemplates needed.
@@ -978,7 +991,20 @@ scheduler:
     securityContexts:
       container: {}
 
-  env: []
+  # env: []
+  env:
+    - name: AWS_ACCESS_KEY_ID
+      valueFrom:
+        secretKeyRef:
+          name: datalake-cred
+          key: MINIO_ROOT_USER
+    - name: AWS_SECRET_ACCESS_KEY
+      valueFrom:
+        secretKeyRef:
+          name: datalake-cred
+          key: MINIO_ROOT_PASSWORD
+    - name: AWS_ENDPOINT_URL
+      value: "http://172.18.0.2:9000"
 
 # Airflow create user job settings
 createUserJob:
@@ -1495,7 +1521,21 @@ webserver:
     securityContexts:
       container: {}
 
-  env: []
+  # env: []
+  env:
+    - name: AWS_ACCESS_KEY_ID
+      valueFrom:
+        secretKeyRef:
+          name: datalake-cred
+          key: MINIO_ROOT_USER
+    - name: AWS_SECRET_ACCESS_KEY
+      valueFrom:
+        secretKeyRef:
+          name: datalake-cred
+          key: MINIO_ROOT_PASSWORD
+    - name: AWS_ENDPOINT_URL
+      value: "http://172.18.0.2:9000"
+
 
 # Airflow Triggerer Config
 triggerer:
@@ -2369,7 +2409,7 @@ elasticsearch:
 # All ports used by chart
 ports:
   flowerUI: 5555
-  airflowUI: 8080
+  airflowUI: 8181
   workerLogs: 8793
   triggererLogs: 8794
   redisDB: 6379
