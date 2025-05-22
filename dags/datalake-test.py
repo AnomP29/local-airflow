@@ -5,6 +5,11 @@ from airflow.operators.empty import EmptyOperator
 from datetime import datetime, timedelta
 from airflow.utils.dates import days_ago
 
+import os
+
+os.chdir('/opt/airflow/dags/repo/dags')
+
+
 default_args = {
     'owner': 'anomp',
     'start_date': datetime(2025, 3, 16),
