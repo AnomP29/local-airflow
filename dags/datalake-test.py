@@ -11,7 +11,7 @@ from pathlib import Path
 # os.chdir('/opt/airflow/dags/repo/dags')
 # airflow_home = Path(os.environ.get("AIRFLOW_HOME", "/opt/airflow/dags/repo/dags/spark_job"))
 # sp_dir = airflow_home / "spark_job"
-spark_dir = '/opt/airflow/dags/repo/dags/spark_job'
+spark_dir = Path('/opt/airflow/dags/repo/dags')
 
 default_args = {
     'owner': 'anomp',
