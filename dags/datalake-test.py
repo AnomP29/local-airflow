@@ -64,7 +64,7 @@ with DAG(
         --conf spark.hadoop.fs.s3a.path.style.access=true \
         --conf spark.hadoop.fs.s3a.connection.ssl.enabled=false \
         --conf spark.hadoop.fs.s3a.impl=org.apache.hadoop.fs.s3a.S3AFileSystem \
-        {spark_dir}/sp-job-01.py
+        {spark_dir}/spark_job/sp-job-01.py
         """.format(spark_dir = spark_dir)
     )
     
