@@ -6,6 +6,9 @@ def main():
         .enableHiveSupport() \
         .getOrCreate()
 
+    print("=== DATABASES ===")
+    spark.sql("SHOW DATABASES").show()
+    
     # Show Hive tables
     spark.sql("SHOW TABLES").show()
 
