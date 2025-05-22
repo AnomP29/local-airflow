@@ -6,9 +6,11 @@ from datetime import datetime, timedelta
 from airflow.utils.dates import days_ago
 
 import os
+from pathlib import Path
 
-os.chdir('/opt/airflow/dags/repo/dags')
-
+# os.chdir('/opt/airflow/dags/repo/dags')
+airflow_home = Path(os.environ.get("AIRFLOW_HOME", "/opt/airflow/dags/repo/dags/spark_job"))
+# sp_dir = airflow_home / "spark_job"
 
 default_args = {
     'owner': 'anomp',
@@ -61,8 +63,8 @@ with DAG(
         --conf spark.hadoop.fs.s3a.path.style.access=true \
         --conf spark.hadoop.fs.s3a.connection.ssl.enabled=false \
         --conf spark.hadoop.fs.s3a.impl=org.apache.hadoop.fs.s3a.S3AFileSystem \
-        /spark_job/sp-job-01.py
-        """
+        {airflow_home}/sp-job-01.py
+        """.format(airflow_home = airflow_home)
     )
     
     task1 = EmptyOperator(task_id="task1")
