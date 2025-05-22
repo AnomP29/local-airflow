@@ -9,8 +9,9 @@ import os
 from pathlib import Path
 
 # os.chdir('/opt/airflow/dags/repo/dags')
-airflow_home = Path(os.environ.get("AIRFLOW_HOME", "/opt/airflow/dags/repo/dags/spark_job"))
+# airflow_home = Path(os.environ.get("AIRFLOW_HOME", "/opt/airflow/dags/repo/dags/spark_job"))
 # sp_dir = airflow_home / "spark_job"
+spark_dir = '/opt/airflow/dags/repo/dags/spark_job'
 
 default_args = {
     'owner': 'anomp',
@@ -63,8 +64,8 @@ with DAG(
         --conf spark.hadoop.fs.s3a.path.style.access=true \
         --conf spark.hadoop.fs.s3a.connection.ssl.enabled=false \
         --conf spark.hadoop.fs.s3a.impl=org.apache.hadoop.fs.s3a.S3AFileSystem \
-        {airflow_home}/sp-job-01.py
-        """.format(airflow_home = airflow_home)
+        {spark_dir}/sp-job-01.py
+        """.format(airflow_home = spark_dir)
     )
     
     task1 = EmptyOperator(task_id="task1")
