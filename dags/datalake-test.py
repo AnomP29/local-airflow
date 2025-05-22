@@ -65,7 +65,7 @@ with DAG(
         --conf spark.hadoop.fs.s3a.connection.ssl.enabled=false \
         --conf spark.hadoop.fs.s3a.impl=org.apache.hadoop.fs.s3a.S3AFileSystem \
         {spark_dir}/sp-job-01.py
-        """.format(airflow_home = spark_dir)
+        """.format(spark_dir = spark_dir)
     )
     
     task1 = EmptyOperator(task_id="task1")
