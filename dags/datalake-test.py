@@ -5,14 +5,6 @@ from airflow.operators.empty import EmptyOperator
 from datetime import datetime, timedelta
 from airflow.utils.dates import days_ago
 
-
-import pandas as pd
-import numpy as np
-import psycopg2
-from pyspark.sql import SparkSession
-from pyspark.sql.functions import *
-from pyspark.sql.types import *
-
 default_args = {
     'owner': 'anomp',
     'start_date': datetime(2025, 3, 16),
@@ -27,7 +19,7 @@ def spark_builder():
         .appName("MyApp") \
         .master("spark://172.18.0.6:7077") \
         .enableHiveSupport() \
-        .config("spark.hadoop.fs.s3a.endpoint", "http://minio:9000") \
+        .config("spark.hadoop.fs.s3a.endpoint", "http://172.18.0.4:9000") \
         .config("spark.hadoop.fs.s3a.access.key", "minioadmin") \
         .config("spark.hadoop.fs.s3a.secret.key", "minioadmin") \
         .config("spark.hadoop.fs.s3a.path.style.access", "true") \
@@ -52,7 +44,24 @@ with DAG(
         provide_context=True,
         python_callable=spark_builder
         )
+    
+    spark_test_2 = BashOperator(
+        task_id='spark_submit_test',
+        bash_command="""
+        spark-submit \
+        --master spark://172.18.0.6:7077 \
+        --conf spark.hadoop.fs.s3a.endpoint=http://172.18.0.4:9000 \
+        --conf spark.hadoop.fs.s3a.access.key=minioadmin \
+        --conf spark.hadoop.fs.s3a.secret.key=minioadmin \
+        --conf spark.hadoop.fs.s3a.path.style.access=true \
+        --conf spark.hadoop.fs.s3a.connection.ssl.enabled=false \
+        --conf spark.hadoop.fs.s3a.impl=org.apache.hadoop.fs.s3a.S3AFileSystem \
+        /spark_job/sp-job-01.py
+        """
+    )
+    
     task1 = EmptyOperator(task_id="task1")
+
     end = EmptyOperator(task_id="end")
 
-    start >> spark_test_1 >> end
+    start >> spark_test_2 >> end
