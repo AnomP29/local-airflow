@@ -4,6 +4,7 @@ def main():
     spark = SparkSession.builder \
         .appName("MyApp") \
         .enableHiveSupport() \
+        .config("hive.metastore.uris", "thrift://172.18.0.5:9083") \
         .getOrCreate()
 
     print("=== DATABASES ===")
