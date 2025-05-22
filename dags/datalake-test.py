@@ -11,7 +11,7 @@ from pathlib import Path
 # os.chdir('/opt/airflow/dags/repo/dags')
 # airflow_home = Path(os.environ.get("AIRFLOW_HOME", "/opt/airflow/dags/repo/dags/spark_job"))
 # sp_dir = airflow_home / "spark_job"
-spark_dir = Path('/opt/airflow/dags/repo/dags')
+spark_dir = str(Path('/opt/airflow/dags/repo/dags'))
 
 default_args = {
     'owner': 'anomp',
@@ -55,7 +55,7 @@ with DAG(
     
     spark_test_2 = BashOperator(
         task_id='spark_submit_test',
-        bash_command="""
+        bash_command=f"""
         spark-submit \
         --master spark://172.18.0.6:7077 \
         --conf spark.hadoop.fs.s3a.endpoint=http://172.18.0.4:9000 \
