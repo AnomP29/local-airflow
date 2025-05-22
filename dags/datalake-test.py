@@ -64,7 +64,7 @@ with DAG(
         --conf spark.hadoop.fs.s3a.path.style.access=true \
         --conf spark.hadoop.fs.s3a.connection.ssl.enabled=false \
         --conf spark.hadoop.fs.s3a.impl=org.apache.hadoop.fs.s3a.S3AFileSystem \
-        {spark_dir}/spark_job/sp-job-01.py
+        {spark_dir}/spark-job/sp-job-01.py
         """
     )    
     task1 = EmptyOperator(task_id="task1")
