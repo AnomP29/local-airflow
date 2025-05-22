@@ -64,6 +64,8 @@ with DAG(
         --conf spark.hadoop.fs.s3a.path.style.access=true \
         --conf spark.hadoop.fs.s3a.connection.ssl.enabled=false \
         --conf spark.hadoop.fs.s3a.impl=org.apache.hadoop.fs.s3a.S3AFileSystem \
+        --conf spark.sql.catalogImplementation=hive \
+        --conf hive.metastore.uris=thrift://172.18.0.3:9083 \
         {spark_dir}/spark-job/sp-job-01.py
         """
     )    
