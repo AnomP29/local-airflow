@@ -13,7 +13,7 @@ def main():
     --*
     pickup_date 
     ,count(1)
-    from hive."default".nyc_taxi_trip_yellow ntty
+    from default.nyc_taxi_trip_yellow ntty
     where 9=9
     --and cast(ntty.pickup_date as varchar) = '2021-01-30'
     group by 1
