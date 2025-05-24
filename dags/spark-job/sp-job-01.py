@@ -1,6 +1,9 @@
 import io
 import sys
+
 from pyspark.sql import SparkSession
+from pyspark.sql.functions import *
+from pyspark.sql.types import *
 
 def main():
     # Create Spark session with Hive support
