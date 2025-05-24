@@ -7,7 +7,11 @@ def main():
         .enableHiveSupport() \
         .getOrCreate()
 
-
+    df = spark.read.table("default.nyc_taxi_trip_yellow")
+    df = df.filter("pickup_date = '2021-01-30'")
+    df = df.groupBy("pickup_date").count().orderBy("pickup_date")
+    oq01 = df._jdf.showString(20, 20, False)
+    print(oq01)
     sp_sql = '''
     select 
     --*
@@ -21,10 +25,10 @@ def main():
     limit 10
     ;
     '''
-    print(sp_sql)
-    q01 = spark.sql(sp_sql)
-    oq01 = q01._jdf.showString(20, 20, False)
-    print(oq01)
+    # print(sp_sql)
+    # q01 = spark.sql(sp_sql)
+    # oq01 = q01._jdf.showString(20, 20, False)
+    # print(oq01)
     # print("=== DATABASES ===")
     # sdb = spark.sql("SHOW DATABASES")
     # odb = sdb._jdf.showString(20, 20, False)
