@@ -23,7 +23,7 @@ def main():
     '''
     q01 = spark.sql(sp_sql)
     oq01 = q01._jdf.showString(20, 20, False)
-    print(q01)
+    print(oq01)
     # print("=== DATABASES ===")
     # sdb = spark.sql("SHOW DATABASES")
     # odb = sdb._jdf.showString(20, 20, False)
