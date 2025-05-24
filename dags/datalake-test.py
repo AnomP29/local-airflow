@@ -59,6 +59,15 @@ with DAG(
         bash_command=f"""
         spark-submit \
         --properties-file {spark_dir}/spark-job/spark-defaults.conf \
+        {spark_dir}/spark-job/sp-job-01.py
+        """
+    )    
+    task1 = EmptyOperator(task_id="task1")
+
+    end = EmptyOperator(task_id="end")
+
+    start >> spark_test_2 >> end
+
         # --master spark://172.18.0.6:7077 \
         # --conf spark.hadoop.fs.s3a.endpoint=http://172.18.0.2:9000 \
         # --conf spark.hadoop.fs.s3a.access.key=minioadmin \
@@ -68,11 +77,3 @@ with DAG(
         # --conf spark.hadoop.fs.s3a.impl=org.apache.hadoop.fs.s3a.S3AFileSystem \
         # --conf spark.sql.catalogImplementation=hive \
         # --conf hive.metastore.uris=thrift://172.18.0.4:9083 \
-        {spark_dir}/spark-job/sp-job-01.py
-        """
-    )    
-    task1 = EmptyOperator(task_id="task1")
-
-    end = EmptyOperator(task_id="end")
-
-    start >> spark_test_2 >> end
