@@ -27,7 +27,7 @@ ENV JAVA_HOME=/opt/java
 ENV PATH="$JAVA_HOME/bin:$PATH"
 
 # Install Hadoop AWS and AWS SDK jars for Spark to use s3a://
-ENV HADOOP_VERSION=3.2.0
+ENV HADOOP_VERSION=3.3.2
 ENV AWS_SDK_VERSION=1.11.901
 RUN mkdir -p /opt/spark/jars && \
     wget -q https://repo1.maven.org/maven2/org/apache/hadoop/hadoop-aws/${HADOOP_VERSION}/hadoop-aws-${HADOOP_VERSION}.jar -O /opt/spark/jars/hadoop-aws-${HADOOP_VERSION}.jar && \
