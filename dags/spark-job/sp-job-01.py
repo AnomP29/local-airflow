@@ -18,7 +18,7 @@ def main():
     --and cast(ntty.pickup_date as varchar) = '2021-01-30'
     group by 1
     order by 1
-    --limit 1
+    limit 10
     ;
     '''
     q01 = spark.sql(sp_sql)
