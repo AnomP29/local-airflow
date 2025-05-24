@@ -34,9 +34,9 @@ def spark_builder():
         .config("spark.hadoop.fs.s3a.addressing.style", "path") \
         .config("spark.hadoop.fs.s3a.connection.ssl.enabled", "false") \
         .config("spark.hadoop.fs.s3a.impl", "org.apache.hadoop.fs.s3a.S3AFileSystem")
-    spark = builder.getOrCreate()
-    spark.sql("SHOW TABLES").show()
-    return spark.sql("SHOW TABLES").show()
+    # spark = builder.getOrCreate()
+    # spark.sql("SHOW TABLES").show()
+    # return spark.sql("SHOW TABLES").show()
 
 
 
@@ -59,7 +59,7 @@ with DAG(
         bash_command=f"""
         spark-submit \
         --properties-file {spark_dir}/spark-job/spark-defaults.conf \
-        {spark_dir}/spark-job/sp-job-01.py
+        {spark_dir}/spark-job/sp-job-01.py 2>&1
         """
     )    
     task1 = EmptyOperator(task_id="task1")
