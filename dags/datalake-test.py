@@ -27,7 +27,7 @@ def spark_builder():
         .appName("MyApp") \
         .master("spark://172.18.0.6:7077") \
         .enableHiveSupport() \
-        .config("spark.hadoop.fs.s3a.endpoint", "http://172.18.0.4:9000") \
+        .config("spark.hadoop.fs.s3a.endpoint", "http://172.18.0.2:9000") \
         .config("spark.hadoop.fs.s3a.access.key", "minioadmin") \
         .config("spark.hadoop.fs.s3a.secret.key", "minioadmin") \
         .config("spark.hadoop.fs.s3a.path.style.access", "true") \
