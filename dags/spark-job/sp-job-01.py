@@ -10,8 +10,18 @@ def main():
     df = spark.read.table("default.nyc_taxi_trip_yellow")
     df = df.filter("pickup_date = '2021-01-30'")
     df = df.groupBy("pickup_date").count().orderBy("pickup_date")
-    oq01 = df._jdf.showString(20, 20, False)
-    print(oq01)
+
+    # Capture df.show() output
+    buf = io.StringIO()
+    sys_stdout = sys.stdout  # Backup original stdout
+    sys.stdout = buf
+
+    df.show(20, truncate=False)  # Show up to 20 rows, no truncation
+
+    sys.stdout = sys_stdout  # Restore stdout
+    output = buf.getvalue()
+    print(output)  # This will go to the Airflow task log
+    
     sp_sql = '''
     select 
     --*
