@@ -58,6 +58,7 @@ with DAG(
         task_id='spark_submit_test',
         bash_command=f"""
         spark-submit \
+        --jars /opt/spark/jars/hadoop-aws-3.3.2.jar,/opt/spark/jars/aws-java-sdk-bundle-1.11.901.jar \
         --properties-file {spark_dir}/spark-job/spark-defaults.conf \
         {spark_dir}/spark-job/sp-job-01.py 2>&1
         """
