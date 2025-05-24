@@ -14,12 +14,16 @@ def main():
         .getOrCreate()
     
     print("=== DATABASES ===")
-    spark.sql("SHOW DATABASES").show()
+    sdb = spark.sql("SHOW DATABASES")
+    odb = sdb._jdf.showString(20, 20, False)
+    print(odb)
     
     print("=== TABLES IN DEFAULT DATABASE ===")
-    spark.sql("USE default")    
-    spark.sql("SHOW TABLES").show()
-
+    # spark.sql("USE default")    
+    stb = spark.sql("SHOW TABLES")
+    otb = stb._jdf.showString(20, 20, False)
+    print(otb)
+    
     # Optional: stop the session
     spark.stop()
 
