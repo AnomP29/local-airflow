@@ -15,7 +15,7 @@ def main():
     ,count(1)
     from default.nyc_taxi_trip_yellow ntty
     where 9=9
-    --and cast(ntty.pickup_date as varchar) = '2021-01-30'
+    and cast(ntty.pickup_date as varchar) = '2021-01-30'
     group by 1
     order by 1
     limit 10
