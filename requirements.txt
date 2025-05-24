@@ -1,5 +1,4 @@
 ruamel.yaml
-gspread
 petl
 pyspark==3.5.1
 boto3 
