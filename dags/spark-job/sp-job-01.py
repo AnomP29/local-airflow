@@ -1,9 +1,13 @@
 from pyspark.sql import SparkSession
 
 def main():
+    # Create Spark session with Hive support
     spark = SparkSession.builder \
-    .getOrCreate()
-    
+        .appName("MyApp") \
+        .enableHiveSupport() \
+        .getOrCreate()
+
+
     print("=== DATABASES ===")
     sdb = spark.sql("SHOW DATABASES")
     odb = sdb._jdf.showString(20, 20, False)
