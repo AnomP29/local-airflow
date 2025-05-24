@@ -47,11 +47,12 @@ with DAG(
 
 ) as dag:
     start = EmptyOperator(task_id="start")
-    spark_test_1 = PythonOperator(
-        task_id='spark_test_1',
-        provide_context=True,
-        python_callable=spark_builder
-        )
+    spark_test_1 = EmptyOperator(task_id="spark_test_1")
+    # PythonOperator(
+    #     task_id='spark_test_1',
+    #     provide_context=True,
+    #     python_callable=spark_builder
+    #     )
     
     spark_test_2 = BashOperator(
         task_id='spark_submit_test',
