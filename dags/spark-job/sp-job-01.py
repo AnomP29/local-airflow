@@ -1,9 +1,14 @@
 import io
 import sys
 
+import logging
+
 from pyspark.sql import SparkSession
 from pyspark.sql.functions import *
 from pyspark.sql.types import *
+
+logging.basicConfig(level=logging.INFO)
+logging.info(">>> SPARK JOB STARTED <<<")
 
 def main():
     # Create Spark session with Hive support
