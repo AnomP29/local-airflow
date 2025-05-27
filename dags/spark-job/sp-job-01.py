@@ -18,16 +18,16 @@ def main():
 
     # Capture df.show() output
     print('capture output')
-    buf = io.StringIO()
-    sys_stdout = sys.stdout  # Backup original stdout
-    sys.stdout = buf
+    # buf = io.StringIO()
+    # sys_stdout = sys.stdout  # Backup original stdout
+    # sys.stdout = buf
     
     print('df.show')
     df.show(20, truncate=False)  # Show up to 20 rows, no truncation
 
     print('Restore stdout')
-    sys.stdout = sys_stdout  # Restore stdout
-    output = buf.getvalue()
+    # sys.stdout = sys_stdout  # Restore stdout
+    # output = buf.getvalue()
     
     # print(output)  # This will go to the Airflow task log
     
