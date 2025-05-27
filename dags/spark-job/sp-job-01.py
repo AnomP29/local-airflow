@@ -13,7 +13,7 @@ def main():
         .getOrCreate()
 
     df = spark.read.table("default.nyc_taxi_trip_yellow")
-    df = df.filter(col("pickup_date").cast("string") == "2021-01-30")
+    df = df.filter(col("pickup_date").cast("string") == "2025-02-01")
     df = df.groupBy("pickup_date").count().orderBy("pickup_date")
 
     # Capture df.show() output
