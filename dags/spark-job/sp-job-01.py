@@ -17,15 +17,19 @@ def main():
     df = df.groupBy("pickup_date").count().orderBy("pickup_date")
 
     # Capture df.show() output
+    print('capture output')
     buf = io.StringIO()
     sys_stdout = sys.stdout  # Backup original stdout
     sys.stdout = buf
-
+    
+    print('df.show')
     df.show(20, truncate=False)  # Show up to 20 rows, no truncation
 
+    print('Restore stdout')
     sys.stdout = sys_stdout  # Restore stdout
     output = buf.getvalue()
-    print(output)  # This will go to the Airflow task log
+    
+    # print(output)  # This will go to the Airflow task log
     
     sp_sql = '''
     select 
