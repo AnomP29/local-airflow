@@ -44,7 +44,7 @@ def main():
     limit 10
     ;
     '''
-    # print(sp_sql)
+    print(sp_sql)
     # q01 = spark.sql(sp_sql)
     # oq01 = q01._jdf.showString(20, 20, False)
     # print(oq01)
