@@ -23,7 +23,7 @@ def main():
     # sys.stdout = buf
     
     print('df.show')
-    df.show(20, truncate=False)  # Show up to 20 rows, no truncation
+    # df.show(20, truncate=False)  # Show up to 20 rows, no truncation
 
     print('Restore stdout')
     # sys.stdout = sys_stdout  # Restore stdout
