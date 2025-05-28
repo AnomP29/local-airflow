@@ -1,4 +1,4 @@
 ruamel.yaml
 petl
 pyspark==3.5.1
-boto3 
+boto3

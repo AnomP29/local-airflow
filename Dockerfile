@@ -13,12 +13,12 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/*
 
-# Download and install OpenJDK 11 from Adoptium
-ENV JAVA_VERSION=11
+# Download and install OpenJDK 17 from Adoptium
+ENV JAVA_VERSION=17
 ENV JAVA_DISTRO=temurin
 
 RUN mkdir -p /opt/java && \
-    wget -q https://github.com/adoptium/temurin11-binaries/releases/download/jdk-11.0.22+7/OpenJDK11U-jdk_x64_linux_hotspot_11.0.22_7.tar.gz -O /tmp/openjdk.tar.gz && \
+    wget -q https://github.com/adoptium/temurin17-binaries/releases/download/jdk-17.0.10+7/OpenJDK17U-jdk_x64_linux_hotspot_17.0.10_7.tar.gz -O /tmp/openjdk.tar.gz && \
     tar -xzf /tmp/openjdk.tar.gz -C /opt/java --strip-components=1 && \
     rm /tmp/openjdk.tar.gz
 
